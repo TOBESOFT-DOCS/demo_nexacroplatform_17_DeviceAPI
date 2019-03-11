@@ -1,0 +1,1784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XCSS version="1.0"><![CDATA[/*
+* last-modified:2018-05-16
+*/
+
+
+/**********************Frame/Form***********************************************/
+.Form
+{
+        font : 10pt "NanumGothic";
+	color : #000000;
+}
+
+.ChildFrame,.FrameSet,.TileFrameSet,.HFrameSet,.VFrameSet
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #e0e0e0;
+}
+
+.MainFrame
+{
+	background : #ffffff;
+	-nexa-border : 2px solid #1565c0;
+	border-radius : 5px;
+}
+
+.MainFrame[status=deactivate]
+{
+	-nexa-border : 2px solid #64b5f6;
+}
+
+.MainFrame .titlebar .titleicon
+{
+	-nexa-icon : URL('theme://images/titlebar_icon_nexacro17.ico');
+}
+
+
+/**********************TitleBar***********************************************/
+.TitleBarControl
+{
+	background : #1565c0;
+	border-radius : 2px 2px 0px 0px / 2px 2px 0px 0px;
+	-nexa-padding : 0px 0px 0px 10px;
+}
+
+.TitleBarControl[status=deactivate]
+{
+	background : #64b5f6;
+}
+
+.TitleBarControl .titleicon
+{
+	color : #ffffff;
+	font : bold 14pt "NanumGothic";
+	-nexa-icon : URL("theme://images/titlebar_icon.png");
+	-nexa-text-padding : 0px 0px 0px 10px;
+	-nexa-text-align : left;
+	-nexa-vertical-align : middle;
+}
+
+.TitleBarControl .minbutton
+{
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_min_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.TitleBarControl .minbutton[userstatus=pushed]
+{
+	background : #2196f3;
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_min_P.png");
+}
+
+.TitleBarControl .minbutton[status=mouseover]
+{
+	background : #64b5f6;
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_min_O.png");
+}
+
+.TitleBarControl .minbutton[status=disabled]
+{
+	background : #64b5f6;
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_min_D.png");
+}
+
+.TitleBarControl .maxbutton
+{
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_max_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.TitleBarControl .maxbutton[userstatus=pushed]
+{
+	background : #2196f3;
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_max_P.png");
+}
+
+.TitleBarControl .maxbutton[status=mouseover]
+{
+	background : #64b5f6;
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_max_O.png");
+}
+
+.TitleBarControl .maxbutton[status=disabled]
+{
+	background : #64b5f6;
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_max_D.png");
+}
+
+.TitleBarControl .normalbutton
+{
+	-nexa-icon : URL("theme://images/btn_normal_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.TitleBarControl .normalbutton[userstatus=pushed]
+{
+	background : #2196f3;
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_normal_P.png");
+}
+
+.TitleBarControl .normalbutton[status=mouseover]
+{
+	background : #64b5f6;
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_normal_O.png");
+}
+
+.TitleBarControl .normalbutton[status=disabled]
+{
+	background : #64b5f6;
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_normal_D.png");
+}
+
+.TitleBarControl .closebutton
+{
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_close_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.TitleBarControl .closebutton[userstatus=pushed]
+{
+	background : #b13138;
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_close_P.png");
+}
+
+.TitleBarControl .closebutton[status=mouseover]
+{
+	background : #de3641;
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_close_O.png");
+}
+
+.TitleBarControl .closebutton[status=disabled]
+{
+	background : #64b5f6;
+	-nexa-border : 1px solid transparent;
+	border-radius : 50px;
+	-nexa-icon : URL("theme://images/btn_close_D.png");
+}
+
+
+/**********************StatusBar***********************************************/
+.StatusBarControl
+{
+	background : #f6f6f6;
+	-nexa-border : 1px solid #e0e0e0;
+	border-radius : 0px 0px 3px 3px / 0px 0px 3px 3px;
+	-nexa-padding : 0px 0px 0px 10px;
+}
+
+.StatusBarControl .statustext
+{
+	-nexa-text-align : left;
+	-nexa-vertical-align : middle;
+}
+
+.StatusBarControl .resizegrip
+{
+	-nexa-icon : url("theme://images/img_grip.png");
+	-nexa-vertical-align : bottom;
+	-nexa-text-align : center;
+}
+
+.StatusBarControl .progressbar
+{
+	background : #90caf9;
+	-nexa-border : 5px solid transparent;
+	color : #000000;
+}
+
+.StatusBarControl .progressbar .progressbaritem
+{
+	background : #1565c0;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.StatusBarControl .progressbar .progressbartext
+{
+	font : bold 8pt "NanumGothic";
+	color : #ffffff;
+	-nexa-text-align : left;
+	-nexa-vertical-align : middle;
+}
+
+
+/**********************Static***********************************************/
+.Static,.StaticControl
+{
+	font : normal 18pt/normal "NanumGothic";
+	color : #333333;
+	-nexa-text-align : left;
+	-nexa-vertical-align : middle;
+}
+
+.Static[status=disabled],.StaticControl[status=disabled]
+{
+	color : #9a9a9a;
+}
+
+
+/**********************Button***********************************************/
+.Button
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #c0c0c0;
+	border-radius : 2px;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+	font : normal 16pt/normal "Arial";
+}
+
+.Button[status=mouseover]
+{
+	-nexa-border : 1px solid #9f9f9f;
+}
+
+.Button[userstatus=pushed]
+{
+	background : #bdbdbd;
+	-nexa-border : 1px solid #666666;
+}
+
+.Button[status=disabled]
+{
+	background : #eeeeee;
+	color : #939393;
+}
+
+
+/**********************Edit/MaskEdit***********************************************/
+.Edit
+{
+	background : #ffffff;
+	-nexa-border : 0px none, 0px none, 1px solid #c0c0c0, 0px none;
+	-nexa-padding : 0px 3px 0px 3px;
+	-nexa-text-align : left;
+	font : normal 18pt/normal "Arial";
+}
+
+.MaskEdit
+{
+	background : #ffffff;
+	-nexa-border : 0px none, 0px none, 1px solid #c0c0c0, 0px none;
+	-nexa-padding : 0px 3px 0px 3px;
+	-nexa-text-align : right;
+}
+
+.Edit[status=focused],.Edit[status=mouseover],.MaskEdit[status=focused],.MaskEdit[status=mouseover]
+{
+	-nexa-border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+
+.Edit[status=readonly]
+{
+	-nexa-border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+
+.Edit[status=disabled],.MaskEdit[status=disabled]
+{
+	color : #9a9a9a;
+	-nexa-border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+/**********************TextArea***********************************************/
+.TextArea,.TextAreaControl
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #bdbdbd;
+	border-radius : 2px;
+	-nexa-padding : 3px 3px 3px 3px;
+	-nexa-text-align : left;
+}
+
+.TextArea[status=mouseover],.TextAreaControl[status=mouseover]
+{
+	-nexa-border : 1px solid #1565c0;
+}
+
+.TextArea[status=disabled],.TextAreaControl[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-border : 1px solid #cccccc;
+	color : #999999;
+}
+
+.TextArea[status=readonly],.TextAreaControl[status=readonly]
+{
+	background : #fafafa;
+	-nexa-border : 1px solid #c0c0c0;
+	color : #333333;
+}
+
+
+/**********************Spin***********************************************/
+.Spin
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #c0c0c0;
+	border-radius : 2px;
+	font : normal 16pt/normal "Arial";
+}
+
+.Spin[status=readonly]
+{
+	background : #fafafa;
+}
+
+.Spin[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-border : 1px solid #cccccc;
+}
+
+.Spin[status=mouseover]
+{
+	-nexa-border : 1px solid #136cc8;
+}
+
+.Spin .spinedit
+{
+	-nexa-padding : 0px 3px 0px 3px;
+	-nexa-text-align : right;
+}
+
+.Spin .spinedit[status=disabled]
+{
+	color : #9a9a9a;
+}
+
+.Spin .spinupbutton
+{
+	background : #f6f6f6;
+	-nexa-icon : URL("theme://images/btn_SpinUp_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.Spin .spinupbutton[userstatus=pushed]
+{
+	background : #666666;
+	-nexa-icon : URL("theme://images/btn_SpinUp_P.png");
+}
+
+.Spin .spinupbutton[status=mouseover]
+{
+	background : #e5e5e5;
+	-nexa-icon : URL("theme://images/btn_SpinUp_N.png");
+}
+
+.Spin .spinupbutton[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-icon : URL("theme://images/btn_SpinUp_D.png");
+}
+
+.Spin .spindownbutton
+{
+	background : #f6f6f6;
+	-nexa-icon : URL("theme://images/btn_SpinDown_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.Spin .spindownbutton[userstatus=pushed]
+{
+	background : #666666;
+	-nexa-icon : URL("theme://images/btn_SpinDown_P.png");
+}
+
+.Spin .spindownbutton[status=mouseover]
+{
+	background : #e5e5e5;
+	-nexa-icon : URL("theme://images/btn_SpinDown_N.png");
+}
+
+.Spin .spindownbutton[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-icon : URL("theme://images/btn_SpinDown_D.png");
+}
+
+
+/**********************Tab***********************************************/
+.Tab
+{
+	background : #ffffff;
+}
+
+.Tab .tabpage
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #cccccc;
+}
+
+.Tab .tabbuttonitem
+{
+	background : #f2f2f2;
+	-nexa-border : 1px solid #cccccc;
+	font : bold 14pt "NanumGothic";
+	color : #1f1f1f;
+	-nexa-padding : 3px 3px 3px 3px;
+}
+
+.Tab .tabbuttonitem .tabbuttonitemtext
+{
+	font : bold 20pt "NanumGothic";
+}
+
+
+
+.Tab .tabbuttonitem[status=focused],.Tab .tabbuttonitem[userstatus=selected]
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #cccccc, 1px solid #cccccc, 1px solid #ffffff, 1px solid #cccccc;
+	color : #212121;
+}
+
+.Tab .tabbuttonitem[status=mouseover]
+{
+	background : #e0effa;
+	-nexa-border : 1px solid #4ca0e2;
+}
+
+.Tab .tabbuttonitem[status=disabled]
+{
+	background : #f2f2f2;
+	-nexa-border : 1px solid #e5e5e5;
+	color : #999999;
+}
+
+.Tab .tabbuttonitem .extrabutton
+{
+	-nexa-icon : url("theme://images/btn_tabExtra_N.png");
+	-nexa-text-align : left;
+	-nexa-vertical-align : middle;
+}
+
+.Tab .tabbuttonitem .extrabutton[status=mouseover]
+{
+	-nexa-icon : url("theme://images/btn_tabExtra_O.png");
+}
+
+.Tab .tabbuttonitem .extrabutton[status=disabled]
+{
+	-nexa-icon : url("theme://images/btn_tabExtra_D.png");
+}
+
+.Tab .nextbutton
+{
+	background : #f2f2f2;
+	-nexa-border : 1px solid #cccccc;
+	-nexa-icon : url("theme://images/btn_tabnext_N.png");
+	-nexa-text-align : center;
+	-nexa-padding : 3px;
+	-nexa-vertical-align : middle;
+}
+
+.Tab .prevbutton
+{
+	background : #f2f2f2;
+	-nexa-border : 1px solid #cccccc;
+	-nexa-icon : url("theme://images/btn_tabprev_N.png");
+	-nexa-text-align : center;
+	-nexa-padding : 3px;
+	-nexa-vertical-align : middle;
+}
+
+.Tab .nextbutton[status=disabled]
+{
+	background : #f2f2f2;
+	-nexa-border : 1px solid #e5e5e5;
+	-nexa-icon : url("theme://images/btn_tabnext_N.png");
+}
+
+.Tab .prevbutton[status=disabled]
+{
+	background : #f2f2f2;
+	-nexa-border : 1px solid #e5e5e5;
+	-nexa-icon : url("theme://images/btn_tabprev_N.png");
+}
+
+.Tab .nextbutton[status=mouseover],.Tab .nextbutton[status=focused]
+{
+	background : #cccccc;
+	-nexa-icon : url("theme://images/btn_tabnext_N.png");
+}
+
+.Tab .prevbutton[status=mouseover],.Tab .prevbutton[status=focused]
+{
+	background : #cccccc;
+	-nexa-icon : url("theme://images/btn_tabprev_N.png");
+}
+
+.Tab .nextbutton[userstatus=pushed]
+{
+	background : #606060;
+	-nexa-border : 1px solid #606060;
+	-nexa-icon : url("theme://images/btn_tabnext_P.png");
+}
+
+.Tab .prevbutton[userstatus=pushed]
+{
+	background : #606060;
+	-nexa-border : 1px solid #606060;
+	-nexa-icon : url("theme://images/btn_tabprev_P.png");
+}
+
+
+/**********************CheckBox***********************************************/
+.CheckBox,.CheckBoxControl
+{
+	color : #232323;
+	-nexa-text-align : left;
+	-nexa-text-padding : 0px 0px 0px 8px;
+	-nexa-icon : URL("theme://images/img_check_NN.png");
+	-nexa-vertical-align : middle;
+}
+
+.CheckBox[userstatus=selected],.CheckBoxControl[userstatus=selected]
+{
+	-nexa-icon : URL("theme://images/img_check_NS.png");
+}
+
+.CheckBox[status=disabled],.CheckBoxControl[status=disabled]
+{
+	color : #9a9a9a;
+	-nexa-icon : URL("theme://images/img_check_DN.png");
+}
+
+.CheckBox[status=disabled][userstatus=selected],.CheckBoxControl[status=disabled][userstatus=selected]
+{
+	color : #9a9a9a;
+	-nexa-icon : URL("theme://images/img_check_DS.png");
+}
+
+
+/**********************Radio***********************************************/
+.Radio .radioitem
+{
+	color : #232323;
+	-nexa-text-align : left;
+	-nexa-text-padding : 0px 0px 0px 5px;
+	-nexa-icon : URL("theme://images/img_Radio_NN.png");
+	-nexa-vertical-align : middle;
+	font : normal 16pt/normal "Arial";
+}
+
+.Radio .radioitem[userstatus=selected]
+{
+	-nexa-icon : URL("theme://images/img_Radio_NS.png");
+}
+
+.Radio .radioitem[status=disabled]
+{
+	color : #9c9c9c;
+	-nexa-icon : URL("theme://images/img_Radio_DN.png");
+}
+
+.Radio .radioitem[status=disabled][userstatus=selected]
+{
+	color : #9c9c9c;
+	-nexa-icon : URL("theme://images/img_Radio_DS.png");
+}
+
+
+/**********************Calendar***********************************************/
+.Calendar,.CalendarControl
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #c0c0c0;
+	border-radius : 2px;
+}
+
+.Calendar .calendaredit,.CalendarControl .calendaredit
+{
+	-nexa-border : 0px none;
+	color : #232323;
+	-nexa-padding : 0px 3px 0px 3px;
+	-nexa-text-align : left;
+}
+
+.Calendar .calendaredit[status=disabled],.CalendarControl .calendaredit[status=disabled]
+{
+	color : #9a9a9a;
+}
+
+.Calendar .dropbutton,.CalendarControl .dropbutton
+{
+	background : #f2f2f2;
+	-nexa-icon : url("theme://images/btn_CalDrop_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.Calendar .dropbutton[status=mouseover],.CalendarControl .dropbutton[status=mouseover]
+{
+	background : #cccccc;
+}
+
+.Calendar .dropbutton[userstatus=pushed],.CalendarControl .dropbutton[userstatus=pushed]
+{
+	background : #606060;
+	-nexa-icon : url("theme://images/btn_CalDrop_P.png");
+}
+
+.Calendar .dropbutton[status=disabled],.CalendarControl .dropbutton[status=disabled]
+{
+	background : #f2f2f2;
+	-nexa-border : 1px solid #e5e5e5;
+	-nexa-icon : url("theme://images/btn_CalDrop_D.png");
+}
+
+.Calendar .calendarspinupbutton,.CalendarControl .calendarspinupbutton
+{
+	background : #f6f6f6;
+	-nexa-icon : URL("theme://images/btn_SpinUp_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.Calendar .calendarspinupbutton[userstatus=pushed],.CalendarControl .calendarspinupbutton[userstatus=pushed]
+{
+	background : #666666;
+	-nexa-icon : URL("theme://images/btn_SpinUp_P.png");
+}
+
+.Calendar .calendarspinupbutton[status=disabled],.CalendarControl .calendarspinupbutton[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-icon : URL("theme://images/btn_SpinUp_D.png");
+}
+
+.Calendar .calendarspinupbutton[status=mouseover],.CalendarControl .calendarspinupbutton[status=mouseover]
+{
+	background : #e5e5e5;
+	-nexa-icon : URL("theme://images/btn_SpinUp_N.png");
+}
+
+.Calendar .calendarspindownbutton,.CalendarControl .calendarspindownbutton
+{
+	background : #f6f6f6;
+	-nexa-icon : URL("theme://images/btn_SpinDown_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.Calendar .calendarspindownbutton[userstatus=pushed],.CalendarControl .calendarspindownbutton[userstatus=pushed]
+{
+	background : #999999;
+	-nexa-icon : URL("theme://images/btn_SpinDown_P.png");
+}
+
+.Calendar .calendarspindownbutton[status=disabled],.CalendarControl .calendarspindownbutton[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-icon : URL("theme://images/btn_SpinDown_D.png");
+}
+
+.Calendar .calendarspindownbutton[status=mouseover],.CalendarControl .calendarspindownbutton[status=mouseover]
+{
+	background : #e5e5e5;
+	-nexa-icon : URL("theme://images/btn_SpinDown_N.png");
+}
+
+
+/**********************DatePickerControl***********************************************/
+.DatePickerControl
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #e5e5e5;
+	border-radius : 2px;
+	color : #000000;
+}
+
+.DatePickerControl .head
+{
+	background : #1565c0;
+	font : bold 14pt "NanumGothic";
+	color : #ffffff;
+	border-radius : 2px 2px 0px 0px / 2px 2px 0px 0px;
+}
+
+.DatePickerControl .head[status=disabled]
+{
+	background : #cccccc;
+}
+
+.DatePickerControl .head .monthstatic,.DatePickerControl .head .yearstatic
+{
+	font : bold 14pt "NanumGothic";
+	color : #ffffff;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.DatePickerControl .head .nextbutton
+{
+	background : #1565c0;
+	-nexa-icon : URL("theme://images/btn_next_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.DatePickerControl .head .prevbutton
+{
+	background : #1565c0;
+	-nexa-icon : URL("theme://images/btn_prev_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.DatePickerControl .head .prevbutton[userstatus=pushed],.DatePickerControl .head .nextbutton[userstatus=pushed]
+{
+	background : #64b5f6;
+}
+
+.DatePickerControl .head .nextbutton[status=disabled],.DatePickerControl .head .prevbutton[status=disabled]
+{
+	background : #cccccc;
+}
+
+.DatePickerControl .head .yearspin,.DatePickerControl .head .monthspin
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #cccccc;
+}
+
+.DatePickerControl .head .yearspin[status=disabled],.DatePickerControl .head .monthspin[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-border : 1px solid #cccccc;
+}
+
+.DatePickerControl .head .yearspin .spinedit,.DatePickerControl .head .yearspin .spinedit[status=mouseover],.DatePickerControl .head .monthspin .spinedit,.DatePickerControl .head .monthspin .spinedit[status=mouseover]
+{
+	font : 12pt "NanumGothic";
+	color : #333333;
+	-nexa-text-align : right;
+	-nexa-padding : 0px 3px 0px 3px;
+}
+
+.DatePickerControl .head .yearspin .spinedit[status=disabled],.DatePickerControl .head .monthspin .spinedit[status=disabled]
+{
+	color : #9a9a9a;
+}
+
+.DatePickerControl .head .yearspin .spinupbutton,.DatePickerControl .head .monthspin .spinupbutton
+{
+	background : #f6f6f6;
+	-nexa-icon : URL("theme://images/btn_SpinUp_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.DatePickerControl .head .yearspin .spinupbutton[status=mouseover],.DatePickerControl .head .monthspin .spinupbutton[status=mouseover]
+{
+	background : #e5e5e5;
+}
+
+.DatePickerControl .head .yearspin .spinupbutton[userstatus=pushed],.DatePickerControl .head .monthspin .spinupbutton[userstatus=pushed]
+{
+	background : #999999;
+	-nexa-icon : URL("theme://images/btn_SpinUp_P.png");
+}
+
+.DatePickerControl .head .yearspin .spindownbutton,.DatePickerControl .head .monthspin .spindownbutton
+{
+	background : #f6f6f6;
+	-nexa-icon : URL("theme://images/btn_SpinDown_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.DatePickerControl .head .yearspin .spindownbutton[status=mouseover],.DatePickerControl .head .monthspin .spindownbutton[status=mouseover]
+{
+	background : #e5e5e5;
+
+}
+
+.DatePickerControl .head .yearspin .spindownbutton[userstatus=pushed],.DatePickerControl .head .monthspin .spindownbutton[userstatus=pushed]
+{
+	background : #999999;
+	-nexa-icon : URL("theme://images/btn_SpinDown_P.png");
+}
+
+.DatePickerControl .body
+{
+	background : #ffffff;
+	font : bold 14pt "NanumGothic";
+	color : #878787;
+	border-radius : 0px 0px 2px 2px / 0px 0px 2px 2px;
+}
+
+.DatePickerControl .body .weekitem
+{
+	font : 8pt "NanumGothic";
+	color : #878787;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.DatePickerControl .body .dayitem
+{
+	background : #ffffff;
+	font : 16pt "NanumGothic";
+	color : #313131;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.DatePickerControl .body .dayitem[status=mouseover]
+{
+	background : #e0effa;
+	-nexa-border : 1px solid #0b7ed7;
+	border-radius : 15px;
+	-nexa-text-align : center;
+}
+
+.DatePickerControl .body .dayitem[userstatus=selected]
+{
+	background : #0078d6;
+	-nexa-border : 1px solid #0078d6;
+	border-radius : 15px;
+	font : bold 8pt "NanumGothic";
+	color : #ffffff;
+}
+
+.DatePickerControl .body .dayitem[status=disabled]
+{
+	color : #cccccc;
+}
+
+.DatePickerControl .body .dayitem[userstatus=today]
+{
+	background : #e0effa;
+	-nexa-border : 1px solid #0078d6;
+}
+
+.DatePickerControl .body .dayitem[userstatus=trailingday]
+{
+	color : #999999;
+}
+
+
+/**********************ScrollBar***********************************************/
+.VScrollBarControl
+{
+	background : #f2f2f2;
+}
+
+.VScrollBarControl .incbutton
+{
+	background : #f2f2f2;
+	-nexa-border : 3px solid #f2f2f2;
+	-nexa-text-align : center;
+	-nexa-icon : url("theme://images/btn_vinc_N.png");
+	-nexa-vertical-align : middle;
+}
+
+.VScrollBarControl .incbutton[userstatus=pushed]
+{
+	background : #606060;
+	-nexa-icon : url("theme://images/btn_vinc_P.png");
+}
+
+.VScrollBarControl .incbutton[status=mouseover]
+{
+	background : #cccccc;
+	-nexa-icon : url("theme://images/btn_vinc_O.png");
+}
+
+.VScrollBarControl .incbutton[status=disabled]
+{
+	-nexa-icon : url("theme://images/btn_vinc_D.png");
+}
+
+.VScrollBarControl .decbutton
+{
+	background : #f2f2f2;
+	-nexa-border : 3px solid #f2f2f2;
+	-nexa-text-align : center;
+	-nexa-icon : url("theme://images/btn_vdec_N.png");
+	-nexa-vertical-align : middle;
+}
+
+.VScrollBarControl .decbutton[userstatus=pushed]
+{
+	background : #606060;
+	-nexa-icon : url("theme://images/btn_vdec_P.png");
+}
+
+.VScrollBarControl .decbutton[status=mouseover]
+{
+	background : #cccccc;
+	-nexa-icon : url("theme://images/btn_vdec_O.png");
+}
+
+.VScrollBarControl .decbutton[status=disabled]
+{
+	-nexa-icon : url("theme://images/btn_vdec_D.png");
+}
+
+.VScrollBarControl .trackbar
+{
+	background : #cccccc;
+	-nexa-border : 0px none, 3px solid transparent, 0px none, 3px solid transparent;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.VScrollBarControl .trackbar[userstatus=pushed]
+{
+	background : #606060;
+}
+
+.VScrollBarControl .trackbar[status=mouseover]
+{
+	background : #999999;
+}
+
+.HScrollBarControl
+{
+	background : #f2f2f2;
+}
+
+.HScrollBarControl .incbutton
+{
+	background : #f2f2f2;
+	-nexa-border : 3px solid #f2f2f2;
+	-nexa-text-align : center;
+	-nexa-icon : url("theme://images/btn_hinc_N.png");
+	-nexa-vertical-align : middle;
+}
+
+.HScrollBarControl .incbutton[userstatus=pushed]
+{
+	background : #606060;
+	-nexa-icon : url("theme://images/btn_hinc_P.png");
+}
+
+.HScrollBarControl .incbutton[status=mouseover]
+{
+	background : #cccccc;
+	-nexa-icon : url("theme://images/btn_hinc_O.png");
+}
+
+.HScrollBarControl .incbutton[status=disabled]
+{
+	-nexa-icon : url("theme://images/btn_hinc_D.png");
+}
+
+.HScrollBarControl .decbutton
+{
+	background : #f2f2f2;
+	-nexa-border : 3px solid #f2f2f2;
+	-nexa-text-align : center;
+	-nexa-icon : url("theme://images/btn_hdec_N.png");
+	-nexa-vertical-align : middle;
+}
+
+.HScrollBarControl .decbutton[userstatus=pushed]
+{
+	background : #606060;
+	-nexa-icon : url("theme://images/btn_hdec_P.png");
+}
+
+.HScrollBarControl .decbutton[status=mouseover]
+{
+	background : #cccccc;
+	-nexa-icon : url("theme://images/btn_hdec_O.png");
+}
+
+.HScrollBarControl .decbutton[status=disabled]
+{
+	-nexa-icon : url("theme://images/btn_hdec_D.png");
+}
+
+.HScrollBarControl .trackbar
+{
+	background : #cccccc;
+	-nexa-border : 3px solid transparent, 0px none, 3px solid transparent, 0px none;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.HScrollBarControl .trackbar[userstatus=pushed]
+{
+	background : #606060;
+}
+
+.HScrollBarControl .trackbar[status=mouseover]
+{
+	background : #999999;
+}
+
+
+/**********************ScrollIndicator***********************************************/
+.VScrollIndicatorControl .trackbar,.HScrollIndicatorControl .trackbar
+{
+	background : #e4e4e4;
+	-nexa-border : 2px solid transparent;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.VScrollIndicatorControl .trackbar[userstatus=pushed],.HScrollIndicatorControl .trackbar[userstatus=pushed]
+{
+	background : #606060;
+}
+
+.VScrollIndicatorControl .trackbar[status=mouseover],.HScrollIndicatorControl .trackbar[status=mouseover]
+{
+	background : #999999;
+}
+/**********************Combo***********************************************/
+.Combo,.ComboControl
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #999999;
+	border-radius : 2px;
+}
+
+.Combo[status=readonly],.ComboControl[status=readonly]
+{
+	background : #fafafa;
+	-nexa-border : 1px solid #c0c0c0;
+}
+
+.Combo[status=disabled],.ComboControl[status=disabled]
+{
+	color : #919191;
+	background : #ebebeb;
+	-nexa-border : 1px solid #cccccc;
+}
+
+.Combo[status=mouseover],.ComboControl[status=mouseover]
+{
+	-nexa-border : 1px solid #136cc8;
+}
+
+.Combo .comboedit,.ComboControl .comboedit
+{
+	color : #000000;
+	-nexa-padding : 0px 0px 0px 3px;
+	-nexa-text-align : left;
+}
+
+.Combo .comboedit[status=disabled],.ComboControl .comboedit[status=disabled]
+{
+	color : #cccccc;
+}
+
+.Combo .dropbutton,.ComboControl .dropbutton
+{
+	background : #f2f2f2;
+	-nexa-icon : URL("theme://images/btn_drop_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.Combo .dropbutton[status=mouseover],.ComboControl .dropbutton[status=mouseover]
+{
+	background : #ebebeb;
+}
+
+.Combo .dropbutton[status=disabled],.ComboControl .dropbutton[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-icon : URL("theme://images/btn_drop_D.png");
+}
+
+
+/**********************ListBox***********************************************/
+.ListBox,.ListBoxControl
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #c0c0c0;
+}
+
+.ListBox[status=disabled],.ListBoxControl[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-border : 1px solid #cccccc;
+	color : #9d9d9d;
+}
+
+.ListBox .listboxitem,.ListBoxControl .listboxitem
+{
+	font : 18pt "NanumGothic";
+	color : #2f2f2f;
+	-nexa-padding : 3px 3px 3px 3px;
+	-nexa-text-align : left;
+}
+
+.ListBox .listboxitem[status=mouseover],.ListBoxControl .listboxitem[status=mouseover]
+{
+	background : #ebebeb;
+}
+
+.ListBox .listboxitem[userstatus=selected],.ListBoxControl .listboxitem[userstatus=selected]
+{
+	background : #c0c0c0;
+}
+
+.ListBox .listboxitem[status=disabled],.ListBoxControl .listboxitem[status=disabled]
+{
+	background : #f6f6f6;
+	color : #969696;
+}
+
+.ListBox .listboxitem[status=disabled][userstatus=selected],.ListBoxControl .listboxitem[status=disabled][userstatus=selected]
+{
+	background : #f6f6f6;
+}
+
+
+/**********************Step***********************************************/
+.StepControl
+{
+	-nexa-padding : 0px 0px 10px 0px;
+}
+
+.StepControl .stepitem
+{
+	-nexa-icon : URL("theme://images/img_Step_N.png");
+	-nexa-text-align : left;
+	-nexa-vertical-align : middle;
+}
+
+.StepControl .stepitem[userstatus=selected]
+{
+	-nexa-icon : url("theme://images/img_Step_S.png");
+}
+
+
+/*********************Menu***********************************************/
+.Menu
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #cccccc;
+}
+
+.Menu .menuitem
+{
+	color : #000000;
+	-nexa-padding : 0px 10px 0px 10px;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;	
+}
+
+.Menu .nextbutton
+{
+	background : #f2f2f2;
+	-nexa-icon : URL("theme://images/btn_menunext_N.png");
+	-nexa-padding : 0px 3px 0px 3px;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.Menu .nextbutton[userstatus=pushed]
+{
+	background : #666666;
+	-nexa-icon : URL("theme://images/btn_menunext_P.png");
+}
+
+.Menu .nextbutton[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-icon : URL("theme://images/btn_menunext_D.png");
+}
+
+.Menu .prevbutton
+{
+	background : #f2f2f2;
+	-nexa-icon : URL("theme://images/btn_menuprev_N.png");
+	-nexa-text-align : center;
+	-nexa-padding : 0px 3px 0px 3px;
+	-nexa-vertical-align : middle;
+}
+
+.Menu .prevbutton[userstatus=pushed]
+{
+	background : #666666;
+	-nexa-icon : URL("theme://images/btn_menuprev_P.png");
+}
+
+.Menu .prevbutton[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-icon : URL("theme://images/btn_menuprev_D.png");
+}
+
+.Menu .menuitem[userstatus=selected]
+{
+	background : #99c9ef;
+}
+
+.Menu .menuitem[status=mouseover]
+{
+	background : #cce4f7;
+}
+
+
+/**********************PopupMenu***********************************************/
+.PopupMenu,.PopupMenuControl
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #ebebeb;
+}
+
+.PopupMenu .prevbutton,.PopupMenuControl .prevbutton
+{
+	background : #f2f2f2;
+	-nexa-icon : URL("theme://images/btn_Pmenuprev_N.png");
+	-nexa-padding : 5px 0px 5px 0px;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.PopupMenu .prevbutton[userstatus=pushed],.PopupMenuControl .prevbutton[userstatus=pushed]
+{
+	background : #666666;
+	-nexa-icon : URL("theme://images/btn_Pmenuprev_P.png");
+}
+
+.PopupMenu .prevbutton[status=disabled],.PopupMenuControl .prevbutton[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-icon : URL("theme://images/btn_Pmenuprev_D.png");
+}
+
+.PopupMenu .nextbutton,.PopupMenuControl .nextbutton
+{
+	background : #f2f2f2;
+	-nexa-icon : URL("theme://images/btn_Pmenunext_N.png");
+	-nexa-text-align : center;
+	-nexa-padding : 5px 0px 5px 0px;
+	-nexa-vertical-align : middle;
+}
+
+.PopupMenu .nextbutton[userstatus=pushed],.PopupMenuControl .nextbutton[userstatus=pushed]
+{
+	background : #666666;
+	-nexa-icon : URL("theme://images/btn_Pmenunext_P.png");
+}
+
+.PopupMenu .nextbutton[status=disabled],.PopupMenuControl .nextbutton[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-icon : URL("theme://images/btn_Pmenunext_D.png");
+}
+
+.PopupMenu .popupmenuitem[userstatus=selected],.PopupMenuControl .popupmenuitem[userstatus=selected]
+{
+	background : #c0c0c0;
+}
+
+.PopupMenu .popupmenuitem[status=mouseover],.PopupMenuControl .popupmenuitem[status=mouseover]
+{
+	background : #ebebeb;
+}
+
+.PopupMenu .popupmenuitem .popupmenuitemcheckbox,.PopupMenuControl .popupmenuitem .popupmenuitemcheckbox
+{
+	-nexa-icon : URL("theme://images/img_popmenu_check_NS.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.PopupMenu .popupmenuitem .popupmenuitemtext,.PopupMenuControl .popupmenuitem .popupmenuitemtext
+{
+	color : #252525;
+	-nexa-text-align : left;
+	-nexa-vertical-align : middle;
+}
+
+.PopupMenu .popupmenuitem .popupmenuitemhotkeytext,.PopupMenuControl .popupmenuitem .popupmenuitemhotkeytext
+{
+	color : #7a7a7a;
+	-nexa-text-align : right;
+	-nexa-vertical-align : middle;
+}
+
+.PopupMenu .popupmenuitem .popupmenuitemexpandimage,.PopupMenuControl .popupmenuitem .popupmenuitemexpandimage
+{
+	-nexa-icon : URL("theme://images/img_menuexpand_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+
+/**********************ProgressBar***********************************************/
+.ProgressBar,.ProgressBarControl
+{
+	background : #90caf9;
+}
+
+.ProgressBar[status=disabled],.ProgressBarControl[status=disabled]
+{
+	background : #cacaca;
+}
+
+.ProgressBar .progressbaritem,.ProgressBarControl .progressbaritem
+{
+	background : #1565c0;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.ProgressBar .progressbaritem[status=disabled],.ProgressBarControl .progressbaritem[status=disabled]
+{
+	background : #b7b7b7;
+}
+
+.ProgressBar .progressbartext,.ProgressBarControl .progressbartext
+{
+	font : bold 8pt "NanumGothic";
+	color : #ffffff;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+
+/**********************ImageViewer***********************************************/
+.ImageViewer
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #e0e0e0;
+}
+
+.ImageViewer[status=mouseover]
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #90caf9;
+}
+
+.ImageViewer[status=disabled]
+{
+	background : #f2f2f2;
+	-nexa-border : 1px solid #e0e0e0;
+}
+
+.ImageViewer .imagetext
+{
+	font : 16pt "NanumGothic";
+	color : #212121;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.ImageViewer .imagetext[status=disabled]
+{
+	color : #999999;
+}
+
+
+/**********************Div/PopupDiv***********************************************/
+.Div,.PopupDiv
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #e0e0e0;
+	font : 16pt "NanumGothic";
+	color : #212121;
+}
+
+.Div[status=mouseover],.PopupDiv[status=mouseover]
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #90caf9;
+}
+
+.Div[status=disabled],.PopupDiv[status=disabled]
+{
+	background : #f2f2f2;
+	-nexa-border : 1px solid #e0e0e0;
+	color : #999999;
+}
+
+
+/**********************GroupBox***********************************************/
+.GroupBox .groupboxcontents
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #cccccc;
+	-nexa-padding : 0px 5px 0px 50px;
+	-nexa-text-align : left;
+	-nexa-vertical-align : middle;
+}
+
+.GroupBox .groupboxcontents[status=disabled]
+{
+	-nexa-border : 1px solid #f2f2f2;
+}
+
+.GroupBox .groupboxtitle
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #cccccc;
+	border-radius : 20px;
+	color : #212121;
+	-nexa-icon : URL("theme://images/img_groupboxtit.png");
+	-nexa-text-padding : 0px 0px 0px 5px;
+	-nexa-text-align : left;
+	-nexa-padding : 0px 5px 0px 10px;
+	-nexa-vertical-align : middle;
+	font : normal 18pt/normal "Arial";
+}
+
+.GroupBox .groupboxtitle[status=disabled]
+{
+	color : #9f9f9f;
+	-nexa-border : 1px solid #f2f2f2;
+	-nexa-icon : URL("theme://images/img_groupboxtit_D.png");
+}
+/**********************FileUpload/FileDownload***********************************************/
+.FileUpload .fileuploaditem .fileuploaditemedit
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #c0c0c0;
+	font : 11pt "NanumGothic";
+	color : #202020;
+	-nexa-text-align : left;
+
+}
+
+.FileUpload .fileuploaditem .fileuploaditemedit[status=disabled]
+{
+	background : #ebebeb;
+	-nexa-border : 1px solid #cccccc;
+	color : #959595;
+}
+
+.FileUpload .fileuploaditem .fileuploaditembutton,.FileUpload .fileuploaditem .fileuploaditembutton[status=mouseover]
+{
+	background : #1565c0;
+	font : 12pt "NanumGothic";
+	color : #ffffff;
+	-nexa-text-padding : 0px 15px 0px 15px;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.FileUpload .fileuploaditem .fileuploaditembutton[userstatus=pushed]
+{
+	background : #64b5f6;
+}
+
+.FileUpload .fileuploaditem .fileuploaditembutton[status=disabled]
+{
+	background : #eeeeee;
+	-nexa-border : 1px solid #cccccc;
+	color : #939393;
+}
+
+
+/**********************FileDownload***********************************************/
+.FileDownload,.FileDownload[status=focused]
+{
+	background : #1565c0;
+	font : 12pt "NanumGothic";
+	color : #ffffff;
+	-nexa-text-padding : 0px 10px 0px 10px;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.FileDownload[status=mouseover]
+{
+	box-shadow : 0px 0px 3px #1976d2;
+}
+
+.FileDownload[userstatus=pushed]
+{
+	background : #64b5f6;
+}
+
+.FileDownload[status=disabled]
+{
+	background : #eeeeee;
+	color : #939393;
+}
+
+
+/**********************Grid***********************************************/
+.Grid .head
+{
+	background : #f5f5f5;
+	-nexa-border : 1px solid #d7d7d7;
+}
+
+.Grid .head .row .cell,.Grid .head .row .cell[userstatus=selected]
+{
+	background : #f5f5f5;
+	-nexa-border : 1px solid #e0e0e0;
+	color : #242424;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+/*-----------------------------------------------------------------------------headbutton-----------------------------------------------------------------------------*/
+.Grid .head .row .cell .cellbutton,.Grid .head .row .cell .cellbutton[userstatus=selected],.Grid .head .row .cell .cellbutton[status=focused]
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #c0c0c0;
+	border-radius : 2px;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.Grid .head .row .cell .cellbutton[status=mouseover]
+{
+	-nexa-border : 1px solid #9f9f9f;
+}
+
+.Grid .head .row .cell .cellbutton[userstatus=pushed]
+{
+	background : #bdbdbd;
+	-nexa-border : 1px solid #666666;
+}
+
+.Grid .head .row .cell .cellbutton[status=disabled]
+{
+	background : #eeeeee;
+	color : #939393;
+}
+
+.Grid .summary .row .cell
+{
+	background : #f7d09d;
+	-nexa-border : 1px solid #e5e5e5;
+	color : #000000;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.Grid .body
+{
+	background : #ffffff;
+}
+
+.Grid .body .row .cell
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #f5f5f5;
+	color : #000000;
+	-nexa-text-align : center;
+	-nexa-background-odd : #f5f5f5;
+	-nexa-vertical-align : middle;
+}
+
+.Grid .body .row .cell[userstatus=selected]
+{
+	background : #cce4f7;
+}
+
+.Grid .body .row .cell[status=mouseover]
+{
+	background : #ebebeb;
+}
+/*-----------------------------------subcell:cell과 동일------------------------------------*/
+.Grid .body .row .cell .subcell, .Grid .body .row .cell .subcell[status=disabled]
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #f5f5f5;
+	color : #000000;
+	-nexa-text-align : center;
+	-nexa-background-odd : #f5f5f5;
+	-nexa-vertical-align : middle;
+}
+.Grid .body .row .cell .subcell[status=mouseover]
+{
+	background : #ebebeb;
+}
+.Grid .body .row .cell .subcell[userstatus=selected]
+{
+	background : #cce4f7;
+}
+.Grid .body .row .cell .subcell[userstatus=blinked]
+{
+    background : #1565c0;
+	color : #ffffff;
+}
+
+
+
+/*-----------------------------------------------------------------------------cellbutton-----------------------------------------------------------------------------*/
+.Grid .body .row .cell .cellbutton,.Grid .body .row .cell .cellbutton[userstatus=selected],.Grid .body .row .cell .cellbutton[status=focused]
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #c0c0c0;
+	border-radius : 2px;
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.Grid .body .row .cell .cellbutton[status=mouseover]
+{
+	-nexa-border : 1px solid #9f9f9f;
+}
+
+.Grid .body .row .cell .cellbutton[userstatus=pushed]
+{
+	background : #bdbdbd;
+	-nexa-border : 1px solid #666666;
+}
+
+.Grid .body .row .cell .cellbutton[status=disabled]
+{
+	background : #eeeeee;
+	color : #939393;
+}
+/*------------------------------------------------------------------cellexpandbutton--------------------------------------------------------------------------------------*/
+.Grid .body .row .cell .cellexpandbutton,.Grid .body .row .cell .cellexpandbutton[userstatus=selected],.Grid .body .row .cell .cellexpandbutton[status=focused]
+{
+	font : 10pt "NanumGothic";
+	background : #f2f2f2;
+	-nexa-icon : URL("theme://images/btn_GridExpand_N.png");
+	-nexa-text-align : center;
+	-nexa-vertical-align : middle;
+}
+
+.Grid .body .row .cell .cellexpandbutton[status=mouseover],.Grid .body .row .cell .cellexpandbutton[userstatus=pushed]
+{
+	background : #4ca0e2;
+	-nexa-icon : URL("theme://images/btn_GridExpand_P.png");
+}
+
+.Grid .body .row .cell .cellexpandbutton[status=disabled]
+{
+	opacity : 0.40;
+}
+
+/*---------------------------------------------------------------celleidt/cellmaskedit/celltextarea---------------------------------------------------------------------*/
+.Grid .body .row .cell .celledit
+{
+	-nexa-border : 0px none, 0px none, 1px solid #c0c0c0, 0px none;
+	-nexa-text-align : left;
+}
+
+.Grid .body .row .cell .cellmaskedit
+{
+	-nexa-border : 1px solid #999999;
+	color : #000000;
+	-nexa-padding : 0px 3px 0px 3px;
+	-nexa-text-align : right;
+}
+
+.Grid .body .row .cell .celltextarea
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #bdbdbd;
+	border-radius : 2px;
+	-nexa-padding : 3px 3px 3px 3px;
+	-nexa-text-align : left;
+}
+
+.Grid .body .row .cell .celledit[status=disabled],.Grid .body .row .cell .cellmaskedit[status=disabled],.Grid .body .row .cell .celltextarea[status=disabled]
+{
+	color : #9a9a9a;
+	-nexa-border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+
+.Grid .body .row .cell .celledit[status=focused],.Grid .body .row .cell .cellmaskedit[status=focused],.Grid .body .row .cell .celltextarea[status=focused]
+{
+	-nexa-border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+
+.Grid .body .row .cell .celledit[status=readonly],.Grid .body .row .cell .cellmaskedit[status=readonly],.Grid .body .row .cell .celltextarea[status=readonly]
+{
+	-nexa-border : 0px none, 0px none, 1px dashed #c0c0c0, 0px none;
+}
+
+.Grid .body .row .cell .celledit[status=mouseover],.Grid .body .row .cell .cellmaskedit[status=mouseover],.Grid .body .row .cell .celltextarea[status=mouseover]
+{
+	-nexa-border : 0px none, 0px none, 2px solid #1565c0, 0px none;
+}
+
+/*--------------------------------------celltreeitem-----------------------------------------------------*/
+.Grid .body .row .cell .celltreeitem .treeitembutton[userstatus=expand]
+{
+	-nexa-icon : URL("theme://images/img_TreeCollapse.png");
+}
+
+.Grid .body .row .cell .celltreeitem .treeitembutton[userstatus=collapse]
+{
+	-nexa-icon : URL("theme://images/img_TreeExpand.png");
+}
+
+.Grid .body .row .cell .celltreeitem .treeitemimage[userstatus=leaf]
+{
+	-nexa-icon : URL("theme://images/img_TreeItem.png");
+}
+
+.Grid .body .row .cell .celltreeitem .treeitemimage[userstatus=collapse]
+{
+	-nexa-icon : URL("theme://images/img_TreeClose.png");
+}
+
+.Grid .body .row .cell .celltreeitem .treeitemimage[userstatus=expand]
+{
+	-nexa-icon : URL("theme://images/img_TreeOpen.png");
+}
+
+.Grid .body .row .cell .celltreeline
+{
+	-nexa-border : 1px dotted #c7c7c7;
+}
+
+.Grid .body .row .cell[userstatus=blinked]
+{
+    background : #1565c0;
+	color : #ffffff;
+}
+
+/**********************FlashPlayer/Plugin/WebBrowser***********************************************/
+.Plugin,.PluginControl,.WebBrowser,.WebBrowserControl
+{
+	-nexa-border : 1px solid #e0e0e0;
+}
+
+
+/**********************Sketch***********************************************/
+.Sketch
+{
+	background : #ffffff;
+	-nexa-border : 1px solid #e0e0e0;
+}
+
+.Sketch[status=disabled]
+{
+	background : #f2f2f2;
+	color : #9a9a9a;
+}
+]]></XCSS>

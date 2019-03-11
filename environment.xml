@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ENV version="2.1">
+  <Environment themeid="theme::default" enabletouchevent="true">
+    <ScreenDefinition>
+      <Screen id="Screen_M_S_Android" type="mobile_small" themeid="theme::demo_android" specifiedos="android" enabletouchevent="true"/>
+      <Screen id="Screen_M_S_iOS" type="mobile_small" themeid="theme::demo_ios" specifiedos="ios" enabletouchevent="true"/>
+    </ScreenDefinition>
+    <Variables/>
+    <Cookies/>
+    <httpheader/>
+  </Environment>
+</ENV>

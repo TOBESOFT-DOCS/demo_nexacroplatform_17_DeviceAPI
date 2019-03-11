@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MetaInfo version="2.0">
+  <Object id="ExtEdit">
+    <ObjectInfo inheritance="nexacro.Edit" classname="nexacro.ExtEdit" shorttypename="ExtEdit" csstypename="ExtEdit" csscontrolname="ExtEditControl" group="Component" subgroup="Component ( default )" csspseudo="true" container="false" composit="" tabstop="true" cssstyle="true" contents="false" formats="false" contentseditor="auto" defaultwidth="140" defaultheight="20" registration="allow" edittype="" useinitvalue="true" popup="false" edittypecomponent="textedit" dblclickevent="onchanged" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="Edit는 사용자로부터 1줄로 된 문자열을 입력받기 위해 사용되는 컴포넌트입니다.&#13;&#10;&#13;&#10;Edit는 사용자에게 문자열을 출력하기 위한 용도로 사용되기도 합니다.&#13;&#10;Edit로 사용자로부터 암호 문자열이나, 길이가 제한된 문자열을 입력받을 수있습니다.&#13;&#10;Edit는 Dataset의 1개의 값과 연동할 수 있습니다."/>
+    <PropertyInfo>
+      <Property name="label" group="Action" subgroup="" edittype="String" unused="false" readonly="false" initonly="false" hidden="false" control="false" style="false" expr="false" bind="false" deprecated="false" mandatory="false" objectinfo="" refreshinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" csspropertyname="" csselementname="" normalpropertyname="" description=""/>
+    </PropertyInfo>
+    <CSSInfo>
+      <PropertyInfo/>
+    </CSSInfo>
+    <StatusInfo/>
+    <MethodInfo/>
+    <EventHandlerInfo/>
+  </Object>
+</MetaInfo>

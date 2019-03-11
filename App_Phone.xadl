@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ADL version="2.0">
+  <Application id="App_Phone" screenid="Screen_M_S_Android,Screen_M_S_iOS" licenseurl="https://www.tobesoft.com/demo/nexacro17_client_license.xml">
+    <Layout>
+      <MainFrame id="mainframe" showtitlebar="false" showstatusbar="false" width="480" height="768" resizable="false" showtitleicon="false" border="0px" onorientationchange="mainframe_onorientationchange" borderRadius="0px">
+        <ChildFrame id="ChildFrame00" formurl="Base::main.xfdl" showtitlebar="false" showtitleicon="false" showcascadetitletext="true" border="0px" onorientationchange="mainframe_ChildFrame00_onorientationchange"/>
+      </MainFrame>
+    </Layout>
+  </Application>
+  <Script type="xscript5.1"><![CDATA[
+this.mainframe_ChildFrame00_onorientationchange = function(obj:nexacro.ChildFrame,e:nexacro.OrientationChangeEventInfo)
+{
+	trace("mainframe_ChildFrame00_onorientationchange()");
+};
+
+this.mainframe_onorientationchange = function(obj:nexacro.MainFrame,e:nexacro.OrientationChangeEventInfo)
+{
+	trace("mainframe_onorientationchange()");
+};
+]]></Script>
+</ADL>

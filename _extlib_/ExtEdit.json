@@ -1,0 +1,18 @@
+﻿{
+	"name": "ExtEdit",
+	"version": "0",
+	"description": "",
+	"license": "",
+	"objInfo": [	
+    "ExtEdit/metainfo/ExtEdit.info"
+	],
+	"scripts": [
+    "ExtEdit/ExtEdit.js"
+	],
+	"designscripts": [
+    "ExtEdit/Design/DesignExtEdit.js"
+	],
+	"help": "",
+	"resources": ""
+}
+//# sourceURL=ExtEdit.json

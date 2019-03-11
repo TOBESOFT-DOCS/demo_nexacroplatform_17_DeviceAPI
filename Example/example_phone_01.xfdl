@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_phone_01" width="480" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" mobileorientation="portrait" screenid="Screen_M_S_Android,Screen_M_S_iOS" width="480">
+        <Edit id="edt_phonenumber" taborder="0" left="10" top="20" width="310" height="60" text="0123456789" inputtype="digit" displaynulltext="Phone Number" value="0123456789" onkeydown="edt_phonenumber_onkeydown"/>
+        <Button id="btn_call" taborder="1" text="Call" left="330" top="20" width="140" height="60" onclick="btn_call_onclick"/>
+        <Static id="stt_result" taborder="2" left="20" top="110" width="440" height="60" wordWrap="english" font="normal 18pt/normal &quot;Arial&quot;"/>
+        <ImageViewer id="ImageViewer00" taborder="3" left="284" top="37" width="24" height="24" image="URL(&quot;imagerc::ico_material_clear-button_64_red.png&quot;)" border="0px" onclick="ImageViewer00_onclick" stretch="fixaspectratio"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.btn_call_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var strPhoneNumber = this.edt_phonenumber.value;
+	
+	if(nexacro._isNull(strPhoneNumber) || strPhoneNumber == "")
+	{
+		this.edt_phonenumber.setFocus();
+	}
+	else
+	{
+		if(this.Phone00.makeCall(strPhoneNumber, true))
+		{
+			this.stt_result.set_text("makeCall() succeed.");
+		}
+		else
+		{
+			this.stt_result.set_text("makeCall() failed.");
+		}
+	}
+};
+
+this.edt_phonenumber_onkeydown = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == "13")
+	{			
+		this.btn_call_onclick();
+		this.btn_call.setFocus();
+	}	
+};
+
+this.ImageViewer00_onclick = function(obj:nexacro.ImageViewer,e:nexacro.ClickEventInfo)
+{
+	this.edt_phonenumber.set_value("");
+	this.edt_phonenumber.setFocus();
+};
+]]></Script>
+    <Objects>
+      <Phone id="Phone00"/>
+    </Objects>
+  </Form>
+</FDL>

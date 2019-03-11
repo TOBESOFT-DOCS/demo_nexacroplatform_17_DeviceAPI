@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_litedb_01" width="480" height="768" titletext="New Form" onclose="sample_litedb_01_onclose">
+    <Layouts>
+      <Layout height="768" mobileorientation="portrait" screenid="Screen_M_S_Android,Screen_M_S_iOS" width="480">
+        <GroupBox id="GroupBox00" taborder="4" text="DB Open/Close" left="10" top="10" width="460" height="190"/>
+        <Button id="btn_dbopen" taborder="0" text="Open" left="210" top="120" width="120" height="60" onclick="btn_dbopen_onclick"/>
+        <Grid id="Grid00" taborder="1" left="10" top="220" width="460" height="320" binddataset="Dataset00" autofittype="col">
+          <Formats>
+            <Format id="default"/>
+          </Formats>
+        </Grid>
+        <Edit id="edt_dbfile" taborder="2" left="20" top="50" width="440" height="60" value="%USERAPP%File/nexacro_sample_db.sqlite" text="%USERAPP%File/nexacro_sample_db.sqlite" enable="false" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Button id="btn_dbclose" taborder="3" text="Close" left="340" top="120" width="120" height="60" onclick="btn_dbclose_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <LiteDBConnection id="LiteDBConnection00" onsuccess="LiteDBConnection00_onsuccess" onerror="LiteDBConnection00_onerror"/>
+      <LiteDBStatement id="LiteDBStatement00" onsuccess="LiteDBStatement00_onsuccess" onerror="LiteDBStatement00_onerror"/>
+      <Dataset id="Dataset00"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.btn_dbopen_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.LiteDBConnection00.isConnected();
+};
+
+this.btn_dbclose_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.LiteDBConnection00.close();
+};
+
+this.LiteDBConnection00_onsuccess = function(obj:nexacro.LiteDBConnection,e:nexacro.LiteDBEventInfo)
+{
+	switch(e.reason)
+	{
+		case 2:	// LiteDBConnection close()
+			this.Grid00.set_visible(false);
+			break;
+		case 4: // LiteDBConnection isConnected()
+			alert("Already connected to DB.");
+			break;
+		case 5: // LiteDBConnection open()
+			this.Grid00.set_visible(true);
+			
+			this.LiteDBStatement00.set_ldbconnection(this.LiteDBConnection00);
+			this.LiteDBStatement00.executeQuery("select * from tb_emp");
+			break;		
+		case 1:	// LiteDBConnection begin()
+		case 3: // LiteDBConnection commit()
+		case 6:	// LiteDBConnection rollback()
+		default:
+			break;
+	}
+};
+
+this.LiteDBConnection00_onerror = function(obj:nexacro.LiteDBConnection,e:nexacro.LiteDBErrorEventInfo)
+{	
+	switch(e.statuscode.toString())
+	{
+		case "1203":	//LiteDBConnection close() error
+			alert("DB close failed.");
+			break;
+		case "1205":	//LiteDBConnection isConnected() error
+			//alert("DB is not connected.");		
+			this.LiteDBConnection00.set_datasource(this.edt_dbfile.value);
+			this.LiteDBConnection00.open();		
+			break;
+		case "1206":	//LiteDBConnection open() error
+			alert("DB open failed.");
+			break;	
+		case "00001":	//Parameter setting error
+		case "1201":	//DB response timeout error
+		case "1202":	//LiteDBConnection begin() error
+		case "1204":	//LiteDBConnection commit() error			
+		case "1207":	//LiteDBConnection rollback() error
+		default:		//Unknown error		
+			var strResult = "[LiteDBConnection00_onerror]";	
+			strResult += "\n["+ e.errortype +" "+ e.statuscode +"] "+ e.errormsg;
+			strResult += "\ne.ldberrorcode: "+ e.ldberrorcode;
+			strResult += "\ne.ldberrormsg: "+ e.ldberrormsg;
+			alert(strResult);				
+	}	
+};
+
+this.LiteDBStatement00_onsuccess = function(obj:nexacro.LiteDBStatement,e:nexacro.LiteDBEventInfo)
+{		
+	this.Dataset00.copyData(e.returnvalue);		
+	this.Grid00.createFormat();
+};
+
+this.LiteDBStatement00_onerror = function(obj:nexacro.LiteDBStatement,e:nexacro.LiteDBErrorEventInfo)
+{
+	switch(e.statuscode.toString())
+	{
+		case "1210":	//LiteDBStatement executeQuery() error
+			alert("LiteDBStatement executeQuery() error");
+			break;
+		case "1211":	//LiteDBStatement executeUpdate() error
+			alert("LiteDBStatement executeUpdate() error");
+			break;
+		case "00001":	//Parameter setting error
+		case "1201":	//DB response timeout error
+		default:		//Unknown error
+			var strResult = "[LiteDBStatement00_onerror]";
+			strResult += "\n["+ e.errortype +" "+ e.statuscode +"] "+ e.errormsg;
+			strResult += "\ne.ldberrorcode: "+ e.ldberrorcode;
+			strResult += "\ne.ldberrormsg: "+ e.ldberrormsg;
+			alert(strResult);	
+	}	
+};
+]]></Script>
+  </Form>
+</FDL>

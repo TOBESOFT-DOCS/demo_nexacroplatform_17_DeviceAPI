@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_sms_01" width="480" height="768" titletext="New Form" onload="sample_sms_01_onload" ontimer="sample_sms_01_ontimer">
+    <Layouts>
+      <Layout height="768" mobileorientation="portrait" screenid="Screen_M_S_Android,Screen_M_S_iOS" width="480">
+        <ListView id="lstv_msg" taborder="0" left="10" top="10" width="460" height="740" binddataset="Dataset00" bandinitstatus="collapse" bandexpandtype="accordion" usesoftkeyboard="false" onbandclick="lstv_msg_onbandclick" oncellclick="lstv_msg_oncellclick" ontouchstart="lstv_msg_ontouchstart" ontouchend="lstv_msg_ontouchend" visible="false" ontouchmove="lstv_msg_ontouchmove">
+          <Formats>
+            <Format id="default">
+              <Band id="body" width="100%" height="120" expandbartype="true" border="1px solid,0px none,0px none" color="#58595b">
+                <Cell id="Cell01" left="40" top="-2" width="310" height="60" text="bind:Phonenumber" font="normal 700 18pt/normal &quot;NanumGothic&quot;" textAlign="left"/>
+                <Cell id="Cell03" left="60" top="50" width="290" height="48" text="bind:Message" font="normal 15pt/normal &quot;NanumGothic&quot;" textAlign="left" wordWrap="english" verticalAlign="top"/>
+                <Cell id="Cell05" left="350" top="10" width="100" height="100" text="bind:Date" font="normal 14pt/normal &quot;NanumGothic&quot;" displaytype="normal" textAlign="left" wordWrap="english"/>
+                <Cell id="Cell00" left="10" top="28" width="20" height="60" displaytype="checkboxcontrol" edittype="checkbox" checkboxsize="20"/>
+                <Cell id="Cell02" left="36" top="54" width="16" height="16" displaytype="imagecontrol" imagestretch="fixaspectratio" expr="EXPR:dataset.getColumn(currow, &quot;Type&quot;)==&quot;receive&quot;?&quot;imagerc::ico_call-received-arrow_32_blue.png&quot;:&quot;imagerc::ico_call-made-right-arrow_32_red.png&quot;"/>
+              </Band>
+              <Band id="detail" width="100%" height="120" font="normal 14pt/normal &quot;NanumGothic&quot;">
+                <Cell id="Cell00" left="10" top="10" width="440" height="100" displaytype="textareacontrol" text="bind:Message" font="normal 12pt/normal &quot;NanumGothic&quot;" textAlign="left" verticalAlign="top" wordWrap="english"/>
+              </Band>
+            </Format>
+          </Formats>
+        </ListView>
+        <Static id="stt_msg" taborder="1" left="20" top="330" width="440" height="60" wordWrap="english" text="Loading messages." textAlign="center" visible="true"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[var numTimerID = 17;
+
+this.sample_sms_01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.stt_msg.set_text("Loading message.");
+	this.stt_msg.set_visible(true);	
+	this.lstv_msg.set_visible(false);		
+
+	this.Sms00.readMessageList();
+};
+
+this.Sms00_onreadmessagelist = function(obj:nexacro.Sms,e:nexacro.SmsMessageListEventInfo)
+{
+	var numSMS, curRow, strImage;
+
+	if(e.smsmessages.length > 0)
+	{
+		this.stt_msg.set_visible(false);
+		this.lstv_msg.set_visible(true);
+
+		this.Dataset00.clearData();
+		this.lstv_msg.set_enableevent(false);
+
+		for(numSMS=0; numSMS < 16; numSMS++)
+		{		
+			curRow = this.Dataset00.addRow();
+			
+			this.Dataset00.setColumn(curRow, "smsid", e.smsmessages[numSMS].smsid);
+			this.Dataset00.setColumn(curRow, "Phonenumber", e.smsmessages[numSMS].phonenumber);
+			this.Dataset00.setColumn(curRow, "Message", e.smsmessages[numSMS].message);
+			this.Dataset00.setColumn(curRow, "Date", e.smsmessages[numSMS].date);
+			this.Dataset00.setColumn(curRow, "Type", e.smsmessages[numSMS].type);		
+		}		
+
+		this.lstv_msg.set_enableevent(true);
+		
+		this.resetScroll();
+	}
+	else
+	{
+		this.stt_msg.set_text("No messages.");
+		this.stt_msg.set_visible(true);
+		
+		this.lstv_msg.set_visible(false);		
+	}
+};
+
+this.Sms00_onerror = function(obj:nexacro.Sms,e:nexacro.SmsErrorEventInfo)
+{
+	var strResult = "["+ e.errortype +" "+ e.statuscode +"] "+ e.errormsg;
+	strResult += "\n"+ "smsid = "+ e.smsid;
+	strResult += "\n"+ "phonenumber = "+ e.phonenumber;
+	strResult += "\n"+ "message = "+ e.message;
+	
+	alert(strResult);	
+};
+
+this.Sms00_ondeletemessage = function(obj:nexacro.Sms,e:nexacro.SmsEventInfo)
+{	
+	var numRow = this.Dataset00.findRow("smsid", e.smsid)
+	this.Dataset00.deleteRow(numRow);
+};
+
+this.lstv_msg_onbandclick = function(obj:nexacro.ListView,e:nexacro.ListViewClickEventInfo)
+{
+	this.lstv_msg.showDetailBand(e.row);
+};
+
+this.lstv_msg_oncellclick = function(obj:nexacro.ListView,e:nexacro.ListViewClickEventInfo)
+{
+	this.lstv_msg.showDetailBand(e.row);
+};
+
+this.lstv_msg_ontouchstart = function(obj:nexacro.ListView,e:nexacro.TouchEventInfo)
+{
+	this.setTimer(numTimerID, 1000);
+};
+
+this.lstv_msg_ontouchend = function(obj:nexacro.ListView,e:nexacro.TouchEventInfo)
+{
+	this.killTimer(numTimerID);
+};
+
+this.lstv_msg_ontouchmove = function(obj:nexacro.ListView,e:nexacro.TouchEventInfo)
+{
+	this.killTimer(numTimerID);
+};
+
+this.sample_sms_01_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	var arrRowIdx = this.lstv_msg.getSelectedRows();
+	
+	var bReturn = this.confirm("Are you sure delete message?")
+	
+	if(bReturn)
+	{
+		var numSmsID = this.Dataset00.getColumn(arrRowIdx[0], "smsid");
+			
+		this.Sms00.deleteMessage(numSmsID);
+	}
+	
+	this.killTimer(numTimerID);
+};
+]]></Script>
+    <Objects>
+      <Sms id="Sms00" onreadmessagelist="Sms00_onreadmessagelist" onerror="Sms00_onerror" ondeletemessage="Sms00_ondeletemessage"/>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="smsid" type="INT" size="256"/>
+          <Column id="Phonenumber" type="STRING" size="256"/>
+          <Column id="Message" type="STRING" size="256"/>
+          <Column id="Date" type="STRING" size="256"/>
+          <Column id="Type" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

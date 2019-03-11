@@ -1,0 +1,19 @@
+﻿{
+	"name": "ExtCombo",
+	"version": "0",
+	"description": "",
+	"license": "",
+	"objInfo": [	
+    "ExtCombo/metainfo/EnumInfo.info",
+    "ExtCombo/metainfo/ExtCombo.info"
+	],
+	"scripts": [
+    "ExtCombo/ExtCombo.js"
+	],
+	"designscripts": [
+    "ExtCombo/Design/DesignExtCombo.js"
+	],
+	"help": "",
+	"resources": ""
+}
+//# sourceURL=ExtCombo.json

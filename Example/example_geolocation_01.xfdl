@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_geolocation_01" width="480" height="768" titletext="New Form" onload="sample_geolocation_01_onload">
+    <Layouts>
+      <Layout height="768" mobileorientation="portrait" screenid="Screen_M_S_Android,Screen_M_S_iOS" width="480">
+        <GroupBox id="GroupBox00" taborder="22" text="Coords Information" left="10" top="250" width="460" height="500" font="normal 18pt/normal &quot;Arial&quot;"/>
+        <Static id="Static02" taborder="4" text="Accuracy" left="30" top="390" width="160" height="40" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Static id="Static03" taborder="5" text="Altitude" left="30" top="440" width="160" height="40" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Static id="Static04" taborder="6" text="Altitudeaccuracy" left="30" top="490" width="160" height="40" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Static id="Static05" taborder="7" text="Heading" left="30" top="540" width="160" height="40" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Static id="Static06" taborder="8" text="Latitude" left="30" top="590" width="160" height="40" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Static id="Static07" taborder="9" text="Longitude" left="30" top="640" width="160" height="40" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Static id="Static08" taborder="10" text="Speed" left="30" top="690" width="160" height="40" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Edit id="edt_accuracy" taborder="11" left="180" top="390" width="270" height="40" enable="false" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Edit id="edt_altitude" taborder="12" left="180" top="440" width="270" height="40" enable="false" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Edit id="edt_altitudeaccuracy" taborder="13" left="180" top="490" width="270" height="40" enable="false" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Edit id="edt_heading" taborder="14" left="180" top="540" width="270" height="40" enable="false" font="normal 16pt/normal &quot;Arial&quot;"/>
+        <Edit id="edt_latitude" taborder="15" left="180" top="590" width="270" height="40" enable="false" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Edit id="edt_longitude" taborder="16" left="180" top="640" width="270" height="40" enable="false" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Edit id="edt_speed" taborder="17" left="180" top="690" width="270" height="40" enable="false" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Static id="Static09" taborder="18" text="Source Type" left="30" top="340" width="160" height="40" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Static id="Static10" taborder="19" text="Timestamp" left="30" top="290" width="160" height="40" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Edit id="edt_sourcetype" taborder="20" left="180" top="340" width="270" height="40" enable="false" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Edit id="edt_timestamp" taborder="21" left="180" top="290" width="270" height="40" enable="false" font="normal 14pt/normal &quot;Arial&quot;"/>
+        <Edit id="edt_intervaltime" taborder="2" left="170" top="70" width="280" height="60" value="1000" text="1000" textAlign="right" autoselect="true" font="normal 18pt/normal &quot;Arial&quot;" inputtype="number" onkeydown="edt_intervaltime_onkeydown"/>
+        <Radio id="rdo_accuracy" taborder="1" left="140" top="10" width="330" height="60" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" columncount="5" fittocontents="none" index="0" text="0" value="accuracy_0" font="normal 18pt/normal &quot;Arial&quot;">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="datacolumn">0</Col>
+                <Col id="codecolumn">accuracy_0</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">1</Col>
+                <Col id="codecolumn">accuracy_1</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">2</Col>
+                <Col id="codecolumn">accuracy_2</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">3</Col>
+                <Col id="codecolumn">accuracy_3</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">accuracy_4</Col>
+                <Col id="datacolumn">4</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Static id="Static00" taborder="23" text="Accuracy:" left="10" top="10" width="120" height="60" font="normal 18pt/normal &quot;Arial&quot;"/>
+        <Static id="Static01" taborder="24" text="Interval Time (200 ~ 86,400,000 ms)" left="240" top="125" width="230" height="30" font="normal 10pt/normal &quot;Arial&quot;"/>
+        <Button id="btn_start" taborder="0" text="Watch Start" left="120" top="160" width="160" height="60" onclick="btn_start_onclick" font="normal 18pt/normal &quot;Arial&quot;"/>
+        <Button id="btn_stop" taborder="3" text="Watch Stop" left="290" top="160" width="160" height="60" onclick="btn_stop_onclick" font="normal 18pt/normal &quot;Arial&quot;" enable="false"/>
+        <Static id="Static11" taborder="25" text="Interval Time:" left="10" top="70" width="150" height="60" font="normal 18pt/normal &quot;Arial&quot;"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Geolocation00_onrecvsuccess = function(obj:nexacro.Geolocation,e:nexacro.GeolocationEventInfo)
+{
+	this.edt_accuracy.set_value(e.coords.accuracy);
+	this.edt_altitude.set_value(e.coords.altitude);
+	this.edt_altitudeaccuracy.set_value(e.coords.altitudeaccuracy);
+	this.edt_heading.set_value(e.coords.heading);
+	this.edt_latitude.set_value(e.coords.latitude);
+	this.edt_longitude.set_value(e.coords.longitude);
+	this.edt_speed.set_value(e.coords.speed);
+	
+	var strSourceType = "UNKNOWN";	
+	switch(e.sourcetype)
+	{
+		case "1":
+			strSourceType = "GPS";
+			break;
+		case "2":
+			strSourceType = "WPS";
+			break;
+		default:
+			strSourceType = "UNKNOWN";
+	}
+	this.edt_sourcetype.set_value(strSourceType);
+	
+	this.edt_timestamp.set_value(e.timestamp);
+};
+
+this.Geolocation00_onrecverror = function(obj:nexacro.Geolocation,e:nexacro.GeolocationErrorEventInfo)
+{
+	var strResult = "["+ e.errortype +" "+ e.statuscode +"] "+ e.errormsg;	
+	alert(strResult);
+};
+
+this.btn_start_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var nAccuracy = this.rdo_accuracy.text;	
+	var nIntervalTime = this.edt_intervaltime.value;
+	
+	if(nIntervalTime < 200 || nIntervalTime > 86400000)
+	{
+		this.edt_intervaltime.setFocus();
+		
+		alert("Invalid range");
+		return;
+	}
+	
+	this.Geolocation00.watchStart(nAccuracy, nIntervalTime);
+	
+	this.btn_start.set_enable(false);
+	this.btn_stop.set_enable(true);
+};
+
+this.btn_stop_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Geolocation00.watchStop();
+
+	this.btn_start.set_enable(true);
+	this.btn_stop.set_enable(false);
+};]]></Script>
+    <Objects>
+      <Geolocation id="Geolocation00" onrecvsuccess="Geolocation00_onrecvsuccess" onrecverror="Geolocation00_onrecverror"/>
+    </Objects>
+  </Form>
+</FDL>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_vibrator_01" width="480" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" mobileorientation="portrait" screenid="Screen_M_S_Android,Screen_M_S_iOS" width="480">
+        <Button id="btn_vibPlay" taborder="0" text="Play" left="220" top="100" width="120" height="60" onclick="btn_vibPlay_onclick" font="normal 18pt/normal &quot;Arial&quot;"/>
+        <Button id="btn_vibStop" taborder="1" text="Stop" left="350" top="100" width="120" height="60" onclick="btn_vibStop_onclick" font="normal 18pt/normal &quot;Arial&quot;"/>
+        <Edit id="edt_pattern" taborder="2" left="100" top="20" width="370" height="60" value="200,1000,200,500,200,1000" text="200,1000,200,500,200,1000" textAlign="right" inputtype="number,comma" font="normal 18pt/normal &quot;Arial&quot;" padding="0px 5px 0px 0px" onkeydown="edt_pattern_onkeydown"/>
+        <Static id="stt_pattern" taborder="3" text="Pattern:" left="10" top="20" width="100" height="60" font="normal 18pt/normal &quot;Arial&quot;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Vibrator id="Vibrator00" onerror="Vibrator00_onerror"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.btn_vibPlay_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(this.Vibrator00.hasVibrator())
+	{
+		var strInput = this.edt_pattern.value;
+		
+		if(strInput !== null && strInput !== "")
+		{
+			var arrPattern = strInput.split(",");
+		
+			this.Vibrator00.set_patterns(arrPattern);				
+			this.Vibrator00.play();
+		}
+		else
+		{
+			alert("Please enter a vibration pattern.");
+		}		
+	}
+	else
+	{
+		alert("Vibration function is not available.");
+	}
+};
+
+this.btn_vibStop_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Vibrator00.stop();
+};
+
+this.edt_pattern_onkeydown = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == "13")
+	{			
+		this.btn_vibPlay_onclick();
+	}			
+};
+
+this.Vibrator00_onerror = function(obj:nexacro.Vibrator,e:nexacro.VibratorErrorEventInfo)
+{
+	var strResult = "\n> Vibrator00_onerror()"
+	+"\n["+ e.errortype +"] "+ e.statuscode +" "+ e.errormsg;
+
+	alert(strResult);
+};
+]]></Script>
+  </Form>
+</FDL>

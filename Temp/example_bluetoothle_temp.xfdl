@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="example_bluetoothle_02" width="480" height="768" titletext="New Form" onload="example_bluetoothle_02_onload" onbeforeclose="example_bluetoothle_02_onbeforeclose">
+    <Layouts>
+      <Layout height="768" mobileorientation="portrait" screenid="Screen_M_S_Android,Screen_M_S_iOS" width="480">
+        <Button id="btn_ble_display" taborder="0" text="BluetoothLE" left="0" top="0" height="60" textAlign="left" borderRadius="0px" padding="0px 0px 0px 10px" width="100.00%" onclick="btn_ble_display_onclick" font="normal bold 16pt/normal &quot;Arial&quot;" background="lightgray"/>
+        <ImageViewer id="img_ble_status" taborder="1" top="6" height="48" image="URL(&quot;imagerc::ico_bluetooth-disabled-button_128_black.png&quot;)" background="transparent" stretch="fixaspectratio" border="0px" padding="5px" width="48" right="5" onclick="img_ble_status_onclick"/>
+        <Grid id="grd_address" taborder="2" left="0" width="100.00%" height="200" top="btn_ble_display:0" binddataset="ds_address" autosizingtype="col" oncellclick="grd_address_oncellclick" autofittype="col" formatid="default">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="20"/>
+                <Column size="160"/>
+                <Column size="160"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="60"/>
+              </Rows>
+              <Band id="body">
+                <Cell colspan="4">
+                  <Cell/>
+                  <Cell col="1" text="bind:DeviceName" textAlign="left"/>
+                  <Cell col="2" text="bind:DeviceAddress" textAlign="left"/>
+                  <Cell col="3" text="bind:StatusMessage" textAlign="left"/>
+                </Cell>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="stt_service" taborder="3" left="0" height="60" color="black" font="normal 16pt/normal &quot;Arial&quot;" background="lightgray" wordWrap="english" top="grd_address:10" width="100%" text="Service" padding="0px 0px 0px 10px"/>
+        <Grid id="grd_service" taborder="4" left="0" width="100.00%" height="180" top="stt_service:0" binddataset="ds_service" autosizingtype="col" autofittype="col" formatid="default" oncellclick="grd_service_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="160"/>
+              </Columns>
+              <Rows>
+                <Row size="60"/>
+              </Rows>
+              <Band id="body">
+                <Cell text="bind:ServiceUUID" textAlign="left" padding="0px 0px 0px 20px"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="stt_characteristic" taborder="5" left="0" height="60" color="black" font="normal 16pt/normal &quot;Arial&quot;" background="lightgray" wordWrap="english" top="grd_service:10" width="100.00%" text="Characteristic" padding="0px 0px 0px 10px"/>
+        <Grid id="grd_characteristic" taborder="6" left="0" width="100.00%" height="180" top="stt_characteristic:0" binddataset="ds_characteristic" autosizingtype="col" autofittype="col" formatid="default">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="20"/>
+                <Column size="160"/>
+                <Column size="240"/>
+              </Columns>
+              <Rows>
+                <Row size="60"/>
+              </Rows>
+              <Band id="body">
+                <Cell colspan="3">
+                  <Cell/>
+                  <Cell col="1" text="bind:CharacteristicName" textAlign="left"/>
+                  <Cell col="2" text="bind:CharacteristicUUID" textAlign="left"/>
+                </Cell>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <BluetoothLE id="BluetoothLE00" onsuccess="BluetoothLE00_onsuccess" onerror="BluetoothLE00_onerror" onscanresult="BluetoothLE00_onscanresult"/>
+      <Dataset id="ds_address">
+        <ColumnInfo>
+          <Column id="DeviceName" type="STRING" size="256"/>
+          <Column id="DeviceAddress" type="STRING" size="256"/>
+          <Column id="StatusMessage" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_service">
+        <ColumnInfo>
+          <Column id="ServiceUUID" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_characteristic">
+        <ColumnInfo>
+          <Column id="CharacteristicName" type="STRING" size="256"/>
+          <Column id="CharacteristicUUID" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_known_characteristic">
+        <ColumnInfo>
+          <Column id="CharacteristicName" type="STRING" size="256"/>
+          <Column id="CharacteristicUUID" type="STRING" size="256"/>
+          <Column id="ParentServiceUUID" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CharacteristicName">UART_TX_CHARACTERISTIC_UUID</Col>
+            <Col id="CharacteristicUUID">6E400002-B5A3-F393-E0A9-E50E24DCCA9E</Col>
+            <Col id="ParentServiceUUID">6E400001-B5A3-F393-E0A9-E50E24DCCA9E</Col>
+          </Row>
+          <Row>
+            <Col id="CharacteristicName">UART_RX_CHARACTERISTIC_UUID</Col>
+            <Col id="CharacteristicUUID">6E400003-B5A3-F393-E0A9-E50E24DCCA9E</Col>
+            <Col id="ParentServiceUUID">6E400001-B5A3-F393-E0A9-E50E24DCCA9E</Col>
+          </Row>
+          <Row>
+            <Col id="CharacteristicName">IMMEDIATEALERT_LEVEL_CHARACTERISTIC</Col>
+            <Col id="CharacteristicUUID">00002A06-0000-1000-8000-00805F9B34FB</Col>
+            <Col id="ParentServiceUUID">00001802-0000-1000-8000-00805F9B34FB</Col>
+          </Row>
+          <Row>
+            <Col id="CharacteristicName">LINKLOSSALERT_LEVEL_CHARACTERISTIC</Col>
+            <Col id="CharacteristicUUID">00002A06-0000-1000-8000-00805F9B34FB</Col>
+            <Col id="ParentServiceUUID">00001803-0000-1000-8000-00805F9B34FB</Col>
+          </Row>
+          <Row>
+            <Col id="CharacteristicName">TX_POWER_LEVEL_CHARACTERISTIC</Col>
+            <Col id="CharacteristicUUID">2A07</Col>
+            <Col id="ParentServiceUUID">1804</Col>
+          </Row>
+          <Row>
+            <Col id="CharacteristicName">PROXIMITY_MONITORING_CHARACTERISTIC</Col>
+            <Col id="CharacteristicUUID">3E099911-293F-11E4-93BD-AFD0FE6D1DFD</Col>
+            <Col id="ParentServiceUUID">3E099910-293F-11E4-93BD-AFD0FE6D1DFD</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.resetStatusMsg = function()
+{
+	nRowCnt = this.ds_address.getCount();
+	
+	for(var i=0; i<nRowCnt; i++)
+	{
+		this.ds_address.setColumn(i, "StatusMessage", "");
+	}
+};
+
+this.resetDS = function()
+{
+	this.ds_service.deleteAll();
+	this.ds_characteristic.deleteAll();	
+}
+
+this.example_bluetoothle_02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	var duration = 10000;
+	this.BluetoothLE00.scanStart(duration);
+};
+
+this.example_bluetoothle_02_onbeforeclose = function(obj:nexacro.Form,e:nexacro.CloseEventInfo)
+{
+	this.BluetoothLE00.disconnect();
+};
+
+this.BluetoothLE00_onsuccess = function(obj:nexacro.BluetoothLE,e:nexacro.BluetoothLEEventInfo)
+{
+
+	var strResult = "\n- BluetoothLE00_onsuccess()";
+	strResult += "\n > obj: " + obj;
+	strResult += "\n > e.eventid: " + e.eventid;
+	strResult += "\n > e.reason: " + e.reason;
+	strResult += "\n > e.message: " + e.message;
+	strResult += "\n > e.serviceuuid: " + e.service_uuid + "\n";
+	trace(strResult);
+
+	
+	switch(e.reason)
+	{
+		case 10:
+			trace(" > 10 : scanStart() scan start");			
+			this.img_ble_status.set_image("imagerc::ico_bluetooth-signal-indicator_128_blue.png");
+			break;
+		
+		case 11:
+			trace(" > 11 : scanStart() scan timeout");
+			this.img_ble_status.set_image("imagerc::ico_blueetooth-logo_128_blue.png");
+			break;
+			
+		case 12:
+			trace(" > 12 : scanStart() discovered for a device that provides specific service");
+			//this.img_ble_status.set_image("imagerc::ico_blueetooth-logo_128_blue.png");
+			break;		
+		
+		case 20:
+			trace(" > 20 : scanStop() scan stop");
+			this.img_ble_status.set_image("imagerc::ico_blueetooth-logo_128_blue.png");			
+			break;
+		
+		case 30:
+			trace(" > 30 : connect() connected");
+			this.img_ble_status.set_image("imagerc::ico_bluetooth-connected_128_blue.png");
+			
+			this.ds_address.setColumn(this.ds_address.rowposition, "StatusMessage", "Connected");
+			/*
+			this.ButtonConnect.set_text("Connected");		
+			// this.Button03.enable = false;
+			var addressOfSelectedDevice = this.Dataset00.getColumn(this.Dataset00.rowposition, "DeviceAddress");
+			//this.BluetoothLE00.discoverServices(addressOfSelectedDevice);
+			*/
+			this.BluetoothLE00.discoverService();
+			
+			
+			break;
+		
+		case 40:
+			trace(" > 40 : disconnect() disconnected");
+			this.img_ble_status.set_image("imagerc::ico_blueetooth-logo_128_blue.png");
+			this.resetStatusMsg();
+			this.resetDS();
+			break;
+		
+		case 50:
+			trace(" > 50 : discoverService() discover service Start");
+			break;
+		
+		case 51:
+			trace(" > 51 : discoverService() service discovered");
+			var row = this.ds_service.addRow();
+			this.ds_service.setColumn(row, "ServiceUUID", e.service_uuid)
+			break;
+		
+		case 60:
+			trace(" > 60 : subscribe() Subscribe, Notification Start");
+			break;
+			
+		case 61:
+			trace(" > 61 : subscribe() Subscribe, Notification message received");
+			break;			
+		
+		case 70:
+			trace(" > 70 : unsubscribe() Unsubscribe, Notification Stop");
+			break;
+		
+		case 80:		
+			trace(" > 80 : readCharacteristic() Read Characteristics");
+			break;
+		
+		case 90:
+			trace(" > 90 : writeCharacteristic() Write Characteristics");
+			break;
+			
+		default:
+			break;
+	}
+
+};
+
+this.BluetoothLE00_onerror = function(obj:nexacro.BluetoothLE,e:nexacro.BluetoothLEErrorEventInfo)
+{
+	var strResult = "["+ e.errortype +" "+ e.statuscode +"] "+ e.errormsg;	
+	trace(strResult);
+};
+
+this.BluetoothLE00_onscanresult = function(obj:nexacro.BluetoothLE,e:nexacro.BluetoothLEScanDeviceEventInfo)
+{
+
+	var strResult = "\n- BluetoothLE00_onscanresult";
+	strResult += "\n > obj: " + obj;
+	strResult += "\n > e.eventid: " + e.eventid;
+	strResult += "\n > e.devicename: " + e.device_name;
+	strResult += "\n > e.deviceaddress: " + e.device_address + "\n";	
+	trace(strResult);
+
+	
+	var row = this.ds_address.addRow();
+	this.ds_address.setColumn(row, "DeviceName", e.device_name);
+	this.ds_address.setColumn(row, "DeviceAddress", e.device_address);
+		
+};
+
+
+this.grd_address_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var rowPos = this.ds_address.rowposition;
+		
+	var strStatus = this.ds_address.getColumn(rowPos, "StatusMessage");	
+	if(strStatus == "Connected")
+		return;
+	else
+		this.BluetoothLE00.disconnect();
+	
+	this.ds_address.setColumn(rowPos, "StatusMessage", "Connecting");	
+	var strAddr = this.ds_address.getColumn(rowPos, "DeviceAddress");	
+	this.BluetoothLE00.connect(strAddr);
+
+};
+
+this.btn_ble_display_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.BluetoothLE00.disconnect();
+	this.ds_address.deleteAll();
+
+	this.BluetoothLE00.scanStart(10000);
+};
+
+this.img_ble_status_onclick = function(obj:nexacro.ImageViewer,e:nexacro.ClickEventInfo)
+{
+	this.btn_ble_display_onclick();
+};
+
+this.grd_service_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var selectedService_uuid = this.ds_service.getColumn(e.row, "ServiceUUID");
+	
+	this.ds_characteristic.deleteAll();
+	
+	for (var i=0; i<this.ds_known_characteristic.getRowCount();i++)
+	{
+		if( selectedService_uuid == this.ds_known_characteristic.getColumn(i, "ParentServiceUUID"))
+		{
+			var row = this.ds_characteristic.addRow();
+			
+			this.ds_characteristic.setColumn(row, "CharacteristicName", this.ds_known_characteristic.getColumn(i, "CharacteristicName"));
+			this.ds_characteristic.setColumn(row, "CharacteristicUUID", this.ds_known_characteristic.getColumn(i, "CharacteristicUUID"));
+		}	
+	}
+};
+
+
+]]></Script>
+  </Form>
+</FDL>

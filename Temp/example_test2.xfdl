@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample_test2" width="480" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" mobileorientation="portrait" screenid="Screen_M_S_Android,Screen_M_S_iOS" width="480">
+        <Combo id="Combo00" taborder="0" text="data1" left="140" top="10" width="190" height="50" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" value="1" index="0" font="normal 18pt/normal &quot;Arial&quot;">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">1</Col>
+                <Col id="datacolumn">데이터1</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2</Col>
+                <Col id="datacolumn">data2</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">3</Col>
+                <Col id="datacolumn">data3</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Edit id="Edit00" taborder="1" left="10" top="80" width="183" height="50" displaynulltext="Edit 에디트"/>
+        <CheckBox id="CheckBox00" taborder="2" text="CheckBox00" left="261" top="93" width="150" height="20"/>
+        <Button id="Button00" taborder="3" text="Button00" left="10" top="10" width="120" height="50"/>
+        <ExtEdit id="ExtEdit00" taborder="4" left="99" top="187" width="213" height="60" label="this is a real label" displaynulltext="NULL"/>
+        <ExtCombo id="ExtCombo00" taborder="5" left="10" top="280" width="320" height="50" combotitle="title" index="0" codecolumn="codecolumn" datacolumn="datacolumn" innerdataset="innerdataset" text="보화소합원" value="01">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">01</Col>
+                <Col id="datacolumn">보화소합원</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">02</Col>
+                <Col id="datacolumn">반하사심탕</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">03</Col>
+                <Col id="datacolumn">반하백출천마탕</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">04</Col>
+                <Col id="datacolumn">유기농 풋사과</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">05</Col>
+                <Col id="datacolumn">휴 릴렉스</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">06</Col>
+                <Col id="datacolumn">홍삼정</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </ExtCombo>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

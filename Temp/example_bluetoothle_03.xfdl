@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="BluetoothLETest" width="1280" height="800" titletext="New Form" oninit="BluetoothLETest_oninit" onclose="BluetoothLETest_onclose" color="red">
+    <Layouts>
+      <Layout height="800" mobileorientation="landscape" width="1280">
+        <Grid id="GridConsole" taborder="0" left="4" top="55" width="281" height="180" binddataset="Dataset00" background="#ffe0e0">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="98"/>
+                <Column size="179"/>
+              </Columns>
+              <Rows>
+                <Row size="20" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Device Name" font="8pt &quot;Arial&quot;"/>
+                <Cell col="1" text="Address" font="8pt &quot;Arial&quot;"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:DeviceName" textAlign="left"/>
+                <Cell col="1" text="bind:DeviceAddress"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="ButtonConnect" taborder="1" text="Connect" left="5" top="245" width="90" height="43" onclick="Button00_onclick" background="#fdfee1"/>
+        <Button id="ButtonEnableNoti" taborder="2" text="Enable Noti" left="293" top="429" width="85" height="34" onclick="ButtonEnableNoti_onclick" background="#e5ebfe"/>
+        <Button id="ButtonBeep" taborder="3" text="Beep(C#B0)" left="291" top="240" width="76" height="29" onclick="ButtonBeep_onclick" background="#e5ebfe"/>
+        <Static id="Static00" taborder="4" text="온도" left="300" top="462" width="75" height="34" background="transparent"/>
+        <Static id="Static01" taborder="5" text="습도" left="300" top="496" width="75" height="34" onclick="Static01_onclick" background="transparent"/>
+        <TextArea id="TextAreaH" taborder="6" left="368" top="498" width="46" height="29" background="#e5ebfe"/>
+        <Static id="Static02" taborder="7" text="미세먼지" left="300" top="530" width="75" height="34" background="transparent"/>
+        <TextArea id="TextAreaD" taborder="8" left="368" top="530" width="46" height="29" background="#e5ebfe"/>
+        <Static id="Static03" taborder="9" text="Co2" left="300" top="564" width="75" height="34" background="transparent"/>
+        <TextArea id="TextAreaC" taborder="10" left="368" top="562" width="46" height="29" background="#e5ebfe"/>
+        <Static id="Static04" taborder="11" text="베터리" left="300" top="598" width="75" height="34" onclick="Static04_onclick" background="transparent"/>
+        <TextArea id="TextAreaB" taborder="12" left="368" top="594" width="46" height="29" background="#e5ebfe"/>
+        <Button id="ButtonWC" taborder="13" text="Write String" left="360" top="317" width="112" height="28" onclick="ButtonWC_onclick" background="#e5ebfe"/>
+        <TextArea id="TextAreaWC" taborder="14" left="293" top="317" width="67" height="28" background="transparent" onchanged="TextAreaWC_onchanged"/>
+        <Button id="Button5Period" taborder="15" text="5 Second(C#P5)" left="372" top="240" width="100" height="29" background="#e5ebfe" onclick="Button5Period_onclick"/>
+        <Button id="ButtonDisableNoti" taborder="16" text="Disable Noti" left="388" top="429" width="84" height="34" onclick="ButtonDisableNoti_onclick" background="#e5ebfe"/>
+        <Button id="ButtonScanStop" taborder="17" text="Stop Scanning" left="193" top="5" width="90" height="43" onclick="ButtonScanStop_onclick" background="#ffe0e0"/>
+        <Button id="ButtonDisconnect" taborder="18" text="Disconnect" left="100" top="245" width="90" height="43" onclick="ButtonDisconnect_onclick" background="#fdfee1"/>
+        <Grid id="GridService" taborder="19" left="5" top="292" width="281" height="183" binddataset="DatasetService" background="#fdfee1" oncellclick="GridService_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="270"/>
+              </Columns>
+              <Rows>
+                <Row size="24"/>
+              </Rows>
+              <Band id="body">
+                <Cell text="bind:ServiceUUID" textAlign="left"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="GridMesssage" taborder="20" left="291" top="6" width="181" height="229" binddataset="DatasetMessage" background="#e5ebfe">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="196"/>
+              </Columns>
+              <Rows>
+                <Row size="18"/>
+              </Rows>
+              <Band id="body">
+                <Cell text="bind:Message" textAlign="left" font="8pt &quot;Arial&quot;"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <TextArea id="TextAreaT" taborder="21" left="368" top="466" width="46" height="29" background="#e5ebfe"/>
+        <Button id="ButtonRed" taborder="22" text="C#LR" left="291" top="273" width="40" height="39" onclick="ButtonRed_onclick" color="black" background="red"/>
+        <Button id="ButtonYellow" taborder="23" text="C#LC" left="432" top="273" width="40" height="39" onclick="ButtonYellow_onclick" background="white"/>
+        <Button id="ButtonGreen" taborder="24" text="C#BG" left="385" top="273" width="40" height="39" onclick="ButtonGreen_onclick" background="Green"/>
+        <Button id="ButtonBlue" taborder="25" text="C#LB" left="338" top="273" width="40" height="39" onclick="ButtonBlue_onclick" background="Blue"/>
+        <Grid id="GridCharacteristic" taborder="26" left="4" top="482" width="281" height="143" binddataset="DatasetUsableCharacteristic" background="#fdfee1" oncellclick="GridCharacteristic_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="132"/>
+                <Column size="146"/>
+              </Columns>
+              <Rows>
+                <Row size="16" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Name" font="8pt/normal &quot;맑은 고딕&quot;"/>
+                <Cell col="1" text="Characteristic UUID" font="normal 8pt/normal &quot;맑은 고딕&quot;"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:characteristic_name"/>
+                <Cell col="1" text="bind:characteristic_uuid"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <TextArea id="TextAreaWCN0" taborder="27" left="293" top="347" width="67" height="25" background="transparent"/>
+        <TextArea id="TextAreaWCN1" taborder="28" left="293" top="371" width="67" height="25" background="transparent"/>
+        <Button id="ButtonWCN" taborder="29" text="Write Integer" left="360" top="348" width="112" height="48" onclick="ButtonWCN_onclick" background="#e5ebfe"/>
+        <Button id="ButtonScanStartUART" taborder="30" text="Scan UART" left="99" top="5" width="90" height="43" onclick="ButtonScanStartUART_onclick" background="#ffe0e0"/>
+        <Button id="ButtonRC" taborder="31" text="Read Characteristic" left="293" top="399" width="179" height="28" onclick="ButtonRC_onclick" background="#e5ebfe"/>
+      </Layout>
+      <Layout name="mobile" screenid="Screen_M_S" width="480" height="768" mobileorientation="portrait"/>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="DeviceName" type="STRING" size="256"/>
+          <Column id="DeviceAddress" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <BluetoothLE id="BluetoothLE00"/>
+      <Dataset id="DatasetService">
+        <ColumnInfo>
+          <Column id="ServiceUUID" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="DatasetMessage">
+        <ColumnInfo>
+          <Column id="Message" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="DatasetKnownCharacteristic">
+        <ColumnInfo>
+          <Column id="characteristic_name" type="STRING" size="256"/>
+          <Column id="characteristic_uuid" type="STRING" size="256"/>
+          <Column id="parent_service_uuid" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="characteristic_name">UART_TX_CHARACTERISTIC_UUID</Col>
+            <Col id="characteristic_uuid">6E400002-B5A3-F393-E0A9-E50E24DCCA9E</Col>
+            <Col id="parent_service_uuid">6E400001-B5A3-F393-E0A9-E50E24DCCA9E</Col>
+          </Row>
+          <Row>
+            <Col id="characteristic_name">UART_RX_CHARACTERISTIC_UUID</Col>
+            <Col id="characteristic_uuid">6E400003-B5A3-F393-E0A9-E50E24DCCA9E</Col>
+            <Col id="parent_service_uuid">6E400001-B5A3-F393-E0A9-E50E24DCCA9E</Col>
+          </Row>
+          <Row>
+            <Col id="characteristic_name">IMMEDIATEALERT_LEVEL_CHARACTERISTIC</Col>
+            <Col id="characteristic_uuid">00002A06-0000-1000-8000-00805F9B34FB</Col>
+            <Col id="parent_service_uuid">00001802-0000-1000-8000-00805F9B34FB</Col>
+          </Row>
+          <Row>
+            <Col id="characteristic_name">LINKLOSSALERT_LEVEL_CHARACTERISTIC</Col>
+            <Col id="characteristic_uuid">00002A06-0000-1000-8000-00805F9B34FB</Col>
+            <Col id="parent_service_uuid">00001803-0000-1000-8000-00805F9B34FB</Col>
+          </Row>
+          <Row>
+            <Col id="characteristic_name">TX_POWER_LEVEL_CHARACTERISTIC</Col>
+            <Col id="characteristic_uuid">2A07</Col>
+            <Col id="parent_service_uuid">1804</Col>
+          </Row>
+          <Row>
+            <Col id="characteristic_name">PROXIMITY_MONITORING_CHARACTERISTIC</Col>
+            <Col id="characteristic_uuid">3E099911-293F-11E4-93BD-AFD0FE6D1DFD</Col>
+            <Col id="parent_service_uuid">3E099910-293F-11E4-93BD-AFD0FE6D1DFD</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="DatasetUsableCharacteristic">
+        <ColumnInfo>
+          <Column id="characteristic_name" type="STRING" size="256"/>
+          <Column id="characteristic_uuid" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+
+this.BluetoothLETest_oninit = function(obj:nexacro.Form,e:nexacro.EventInfo)
+{	
+	this.BluetoothLE00.addEventHandler("onscanresult",this.BluetoothLE00_onscanresult,this);
+	this.BluetoothLE00.addEventHandler("onsubscriberesult",this.BluetoothLE00_onsubscriberesult,this);	
+	this.BluetoothLE00.addEventHandler("onsuccess",this.BluetoothLE00_onsuccess,this);
+	this.BluetoothLE00.addEventHandler("onerror",this.BluetoothLE00_onerror,this);
+	this.addEventHandler("ontimer",this.BluetoothLETest_ontimer,this);
+
+};
+
+this.ButtonScanStartUART_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.deleteAll();
+	this.TextAreaB.deleteText();
+	this.TextAreaC.deleteText();
+	this.TextAreaD.deleteText();
+	this.TextAreaH.deleteText();
+	this.TextAreaT.deleteText();
+	this.TextAreaWC.deleteText();	
+	var duration = 10000;	
+	var service_uuid= "6E400001-B5A3-F393-E0A9-E50E24DCCA9E";
+	//this.BluetoothLE00.scanStart(duration, service_uuid);
+	this.BluetoothLE00.scanStart(duration);
+};
+
+this.ButtonScanStart_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.deleteAll();
+	this.TextAreaB.deleteText();
+	this.TextAreaC.deleteText();
+	this.TextAreaD.deleteText();
+	this.TextAreaH.deleteText();
+	this.TextAreaT.deleteText();
+	this.TextAreaWC.deleteText();	
+	var duration = 2000;	
+	var service_uuid= "";	
+	this.BluetoothLE00.scanStart(duration, service_uuid);
+	
+};
+
+this.BluetoothLE00_onscanresult = function(obj:nexacro.BluetoothLE, e:nexacro.BluetoothLEScanDeviceEventInfo) 
+{
+	var row = this.Dataset00.addRow();
+	this.Dataset00.setColumn(row, "DeviceName", e.device_name);
+	this.Dataset00.setColumn(row, "DeviceAddress", e.device_address);
+};
+
+this.BluetoothLETest_ontimer = function(obj:Form, e:nexacro.TimerEventInfo)
+{
+	if ( e.timerid == 0 ) {	 // b
+		this.TextAreaB.set_background("#ffffaa");
+	} else if ( e.timerid == 1 ) {	 // c	
+		this.TextAreaC.set_background("#ffffaa");
+	} else if ( e.timerid == 2 ) {		// m
+		this.TextAreaD.set_background("#ffffaa");
+	} else if ( e.timerid == 3 ) {	// t
+		this.TextAreaT.set_background("#ffffaa");
+		this.TextAreaH.set_background("#ffffaa");
+	} else if ( e.timerid == 4 ) {	
+	
+	} else if ( e.timerid == 5 ) {	
+	
+	} else if ( e.timerid == 100 ) {	
+	};
+	
+	this.killTimer(e.timerid);	
+}
+
+this.ButtonDisconnect_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.BluetoothLE00.disconnect();
+};
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var addressOfSelectedDevice = this.Dataset00.getColumn(this.Dataset00.rowposition, "DeviceAddress");
+	this.BluetoothLE00.connect(addressOfSelectedDevice);
+};
+
+this.ButtonScanStop_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.BluetoothLE00.scanStop();
+};
+
+this.BluetoothLE00_onsubscriberesult = function(obj:nexacro.BluetoothLE, e:nexacro.BluetoothLEEventInfo) 
+{	
+	var row = this.DatasetMessage.addRow();
+	
+	var today = new Date();
+	var timestamp = today.getHours().toString()+":" + today.getMinutes().toString() + ":" + today.getSeconds().toString() + " / ";
+	
+	this.DatasetMessage.setColumn(row, "Message", timestamp+e.message)
+	var command = e.message;
+	// this.TAConsole.set_value(e.message);
+
+	trace("BluetoothLE00_onsubscriberesult()");
+	trace("command = "+ e.message);
+
+	
+	if (command.startsWith("S#T"))
+	{	// Temperature & Huminity
+		var huminity_temperature = command.substring(3);
+		var htArray = huminity_temperature.split(',');
+		today.getHours() + today.getMinutes()
+		this.TextAreaH.set_value(htArray[0]);
+		this.TextAreaT.set_value(htArray[1]);
+		trace("oncharacteristicchanged : " + htArray[0]);
+		this.TextAreaH.set_background("#ff9900"/* #ffffaa */);
+		this.TextAreaT.set_background("#ff9900"/* #ffffaa */);
+		this.setTimer(3, 2000);
+	} 
+	else if (command.startsWith("S#C")) 
+	{	//Co2
+		var co2 = command.substring(3);
+		this.TextAreaC.set_value(co2);
+		this.TextAreaC.set_background("#ff9900"/* #ffffaa */);
+		this.setTimer(1, 2000);
+		trace("oncharacteristicchanged : " + co2);
+	}
+	else if (command.startsWith("S#M")) 
+	{	// Dust
+		var dust = command.substring(3);
+		var dArray = dust.split(',');
+		this.TextAreaD.set_value(dArray[0]);
+		this.TextAreaD.set_background("#ff9900"/* #ffffaa */);
+		this.setTimer(2, 2000);
+	}
+	else if (command.startsWith("S#B")) 
+	{	// Battery voltage
+		var batteryVoltage = command.substring(3);
+		this.TextAreaB.set_value(batteryVoltage);
+		this.TextAreaB.set_background("#ff9900"/* #ffffaa */);
+		this.setTimer(0, 2000);
+	}
+};
+
+this.BluetoothLE00_onsuccess = function(obj:nexacro.BluetoothLE, e:nexacro.BluetoothLEEventInfo) 
+{	
+	var row = this.DatasetMessage.addRow();
+
+	var strEventMsg = "\n\nBluetoothLE00_onsuccess()";
+	strEventMsg += "\ne.eventid = "+ e.eventid;
+	strEventMsg += "\ne.reason = "+ e.reason;
+	strEventMsg += "\ne.message = "+ e.message;
+	strEventMsg += "\ne.serviceuuid = "+ e.service_uuid;			
+	trace(strEventMsg);
+
+	switch(e.reason)
+	{
+		case 10:
+		this.DatasetMessage.setColumn(row, "Message", "onsuccess : Scanning Start");
+		break;
+		
+		case 11:
+		this.DatasetMessage.setColumn(row, "Message", "onsuccess : Scanning Finished");
+		break;
+		
+		case 20:
+		this.DatasetMessage.setColumn(row, "Message", "onsuccess : Scanning Stopped");
+		break;
+		
+		case 30:
+		this.DatasetMessage.setColumn(row, "Message", "onsuccess : Connected");
+		this.ButtonConnect.set_text("Connected");		
+		// this.Button03.enable = false;
+		var addressOfSelectedDevice = this.Dataset00.getColumn(this.Dataset00.rowposition, "DeviceAddress");
+		//this.BluetoothLE00.discoverServices(addressOfSelectedDevice);
+		this.BluetoothLE00.discoverService();
+		break;
+		
+		case 40:
+		
+		// 		this.Button03.enable = true;
+ 		this.Dataset00.deleteAll();
+		this.DatasetService.deleteAll();
+		this.DatasetMessage.deleteAll();
+		this.DatasetUsableCharacteristic.deleteAll();
+
+ 		this.TextAreaB.deleteText();
+ 		this.TextAreaC.deleteText();
+ 		this.TextAreaD.deleteText();
+		this.TextAreaH.deleteText();
+		this.TextAreaT.deleteText();
+ 		this.TextAreaWC.deleteText();	
+// 		
+		row = this.DatasetMessage.addRow();
+		this.DatasetMessage.setColumn(row, "Message", "40 : Disconnected");
+		this.ButtonConnect.set_text("Connect");		
+
+		break;
+		
+		case 50:
+		this.DatasetMessage.setColumn(row, "Message", "50 : Discover Service Start");
+		break;
+		
+		case 51:
+		this.DatasetMessage.setColumn(row, "Message", "51 : Service Discovered");
+		
+		var row = this.DatasetService.addRow();
+		this.DatasetService.setColumn(row, "ServiceUUID", e.service_uuid)
+		break;
+		
+		case 60:
+		this.DatasetMessage.setColumn(row, "Message", "60 : Subscribe, Noti Start");
+		break;
+		
+		case 70:
+		this.DatasetMessage.setColumn(row, "Message", "70 : Unsubscribe, Noti Stopped");
+		break;
+		
+		case 80:
+		
+		this.DatasetMessage.setColumn(row, "Message", "80 : "+ e.message);	
+	
+		break;
+		
+		case 90:
+		this.DatasetMessage.setColumn(row, "Message", "90 : Write Characteristics");
+		break;
+		
+	}
+
+};
+
+this.BluetoothLE00_onerror = function(obj:nexacro.BluetoothLE, e:nexacro.BluetoothLEErrorEventInfo)
+{	
+	var row = this.DatasetMessage.addRow();
+	this.DatasetMessage.setColumn(row, "Message", e.errormsg);
+}
+
+
+this.ButtonBeep_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	var ServiceUUID = this.DatasetService.getColumn(this.DatasetService.rowposition, "ServiceUUID");	
+	var currentCharacteristicUUID = this.DatasetUsableCharacteristic.getColumn
+									(this.DatasetUsableCharacteristic.rowposition, "characteristic_uuid");	
+	this.BluetoothLE00.writeCharacteristic(ServiceUUID, currentCharacteristicUUID, "C#B0", "string");	
+};
+
+this.BluetoothLETest_ontimer = function(obj:Form, e:nexacro.TimerEventInfo)
+{	
+	if ( e.timerid == 0 ) {	 // b
+		this.TextAreaB.set_background("#ffffaa");
+	} else if ( e.timerid == 1 ) {	 // c	
+		this.TextAreaC.set_background("#ffffaa");
+	} else if ( e.timerid == 2 ) {		// m
+		this.TextAreaD.set_background("#ffffaa");
+	} else if ( e.timerid == 3 ) {	// t
+		this.TextAreaT.set_background("#ffffaa");
+		this.TextAreaH.set_background("#ffffaa");
+	} else if ( e.timerid == 4 ) {	
+	
+	} else if ( e.timerid == 5 ) {	
+	
+	} else if ( e.timerid == 100 ) {	
+	};
+	
+	this.killTimer(e.timerid);	
+}
+
+this.ButtonWC_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var ServiceUUID = this.DatasetService.getColumn(this.DatasetService.rowposition, "ServiceUUID");	
+	var currentCharacteristicUUID = this.DatasetUsableCharacteristic.getColumn(this.DatasetUsableCharacteristic.rowposition, "characteristic_uuid");	
+	this.BluetoothLE00.writeCharacteristic(ServiceUUID, currentCharacteristicUUID,  this.TextAreaWC.value, "string");	
+	
+};
+
+this.ButtonEnableNoti_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	var ServiceUUID = this.DatasetService.getColumn(this.DatasetService.rowposition, "ServiceUUID");	
+	var currentCharacteristicUUID = this.DatasetUsableCharacteristic.getColumn(this.DatasetUsableCharacteristic.rowposition, "characteristic_uuid");		
+	this.BluetoothLE00.subscribe(ServiceUUID, currentCharacteristicUUID);
+};
+
+this.ButtonDisableNoti_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{		
+	var ServiceUUID = this.DatasetService.getColumn(this.DatasetService.rowposition, "ServiceUUID");	
+	var currentCharacteristicUUID = this.DatasetUsableCharacteristic.getColumn(this.DatasetUsableCharacteristic.rowposition, "characteristic_uuid");		
+	this.BluetoothLE00.unsubscribe(ServiceUUID, currentCharacteristicUUID); //  iOS : characteristic uuid needed
+	this.TextAreaB.deleteText();
+	this.TextAreaC.deleteText();
+	this.TextAreaD.deleteText();
+	this.TextAreaH.deleteText();
+	this.TextAreaT.deleteText();
+};
+
+this.BluetoothLETest_onclose = function(obj:nexacro.Form,e:nexacro.CloseEventInfo)
+{
+	trace("BluetoothLETest_onclose : ");
+	this.BluetoothLE00.destroy();
+};
+
+this.Buttonclose_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.BluetoothLE00.destroy();
+};
+
+this.ButtonRed_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var ServiceUUID = this.DatasetService.getColumn(this.DatasetService.rowposition, "ServiceUUID");	
+	var currentCharacteristicUUID = this.DatasetUsableCharacteristic.getColumn(this.DatasetUsableCharacteristic.rowposition, "characteristic_uuid");		
+	this.BluetoothLE00.writeCharacteristic(ServiceUUID, currentCharacteristicUUID, "C#LR", "string");	
+};
+
+this.ButtonGreen_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var ServiceUUID = this.DatasetService.getColumn(this.DatasetService.rowposition, "ServiceUUID");	
+	var currentCharacteristicUUID = this.DatasetUsableCharacteristic.getColumn(this.DatasetUsableCharacteristic.rowposition, "characteristic_uuid");		
+	this.BluetoothLE00.writeCharacteristic(ServiceUUID, currentCharacteristicUUID, "C#LG", "string");	
+};
+
+this.ButtonYellow_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var ServiceUUID = this.DatasetService.getColumn(this.DatasetService.rowposition, "ServiceUUID");	
+	var currentCharacteristicUUID = this.DatasetUsableCharacteristic.getColumn(this.DatasetUsableCharacteristic.rowposition, "characteristic_uuid");		
+	this.BluetoothLE00.writeCharacteristic(ServiceUUID, currentCharacteristicUUID, "C#LY", "string");	
+};
+
+this.ButtonBlue_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var ServiceUUID = this.DatasetService.getColumn(this.DatasetService.rowposition, "ServiceUUID");	
+	var currentCharacteristicUUID = this.DatasetUsableCharacteristic.getColumn(this.DatasetUsableCharacteristic.rowposition, "characteristic_uuid");		
+	this.BluetoothLE00.writeCharacteristic(ServiceUUID, currentCharacteristicUUID, "C#LB", "string");	
+};
+
+this.Button5Period_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var ServiceUUID = this.DatasetService.getColumn(this.DatasetService.rowposition, "ServiceUUID");	
+	var currentCharacteristicUUID = this.DatasetUsableCharacteristic.getColumn(this.DatasetUsableCharacteristic.rowposition, "characteristic_uuid");		
+	this.BluetoothLE00.writeCharacteristic(ServiceUUID, currentCharacteristicUUID, "C#P5", "string");	
+};
+
+this.GridService_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var selectedService_uuid = this.DatasetService.getColumn(e.row, "ServiceUUID");
+	this.DatasetUsableCharacteristic.deleteAll();
+	for (var i=0; i<this.DatasetKnownCharacteristic.getRowCount();i++)
+	{
+		var parentservice = this.DatasetKnownCharacteristic.getColumn(i, "parent_service_uuid");
+		if( selectedService_uuid == this.DatasetKnownCharacteristic.getColumn(i, "parent_service_uuid") )
+		{
+			var row = this.DatasetUsableCharacteristic.addRow();			
+			this.DatasetUsableCharacteristic.setColumn(row, "characteristic_name", this.DatasetKnownCharacteristic.getColumn(i, "characteristic_name"));
+			this.DatasetUsableCharacteristic.setColumn(row, "characteristic_uuid", this.DatasetKnownCharacteristic.getColumn(i, "characteristic_uuid"));
+		}
+	
+	};
+	
+};
+
+
+this.ButtonWCN_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{ 
+	var ServiceUUID = this.DatasetService.getColumn(this.DatasetService.rowposition, "ServiceUUID");	
+	var currentCharacteristicUUID = this.DatasetUsableCharacteristic.getColumn(this.DatasetUsableCharacteristic.rowposition, "characteristic_uuid");	
+	var nSizeArray = 0 ;
+	if(this.TextAreaWCN0.value != undefined ) nSizeArray++;
+	if(this.TextAreaWCN1.value != undefined ) nSizeArray++;
+	// if(this.TextAreaWCN1.value.size != 0) nSizeArray++;
+	var messageIntegerArray = "" + nSizeArray + ":" + this.TextAreaWCN0.value + "," + this.TextAreaWCN1.value;
+	this.BluetoothLE00.writeCharacteristic(ServiceUUID, currentCharacteristicUUID, messageIntegerArray,"integer");	
+};
+
+
+
+
+this.ButtonRC_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var ServiceUUID = this.DatasetService.getColumn(this.DatasetService.rowposition, "ServiceUUID");	
+	var currentCharacteristicUUID = this.DatasetUsableCharacteristic.getColumn(this.DatasetUsableCharacteristic.rowposition, "characteristic_uuid");	
+	this.BluetoothLE00.readCharacteristic(ServiceUUID, currentCharacteristicUUID);	
+	
+};
+]]></Script>
+  </Form>
+</FDL>

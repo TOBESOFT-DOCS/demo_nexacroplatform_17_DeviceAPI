@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="example_bluetoothle_02" width="480" height="768" titletext="FrameForm_Work" onload="FrameForm_Work_onload" oninit="FrameForm_Work_oninit">
+    <Layouts>
+      <Layout width="480" height="768" screenid="Screen_M_S_Android,Screen_M_S_iOS">
+        <Button id="Button03" taborder="1" text="Connect" left="27" top="161" width="103" height="40" onclick="Button03_onclick" wordWrap="char"/>
+        <TextArea id="TAConsole" taborder="0" left="29" top="315" width="399" height="32"/>
+        <Static id="Static00" taborder="2" text="온도" left="203" top="466" width="75" height="34"/>
+        <TextArea id="TextAreaT" taborder="3" left="274" top="466" width="94" height="28"/>
+        <Static id="Static01" taborder="4" text="습도" left="203" top="503" width="75" height="34" onclick="Static01_onclick"/>
+        <TextArea id="TextAreaH" taborder="5" left="274" top="504" width="94" height="28"/>
+        <Static id="Static02" taborder="6" text="미세먼지" left="203" top="540" width="75" height="34"/>
+        <TextArea id="TextAreaD" taborder="7" left="274" top="542" width="94" height="28"/>
+        <Static id="Static03" taborder="8" text="Co2" left="203" top="577" width="75" height="34"/>
+        <TextArea id="TextAreaC" taborder="9" left="274" top="580" width="94" height="28"/>
+        <Static id="Static04" taborder="10" text="베터리전압" left="203" top="614" width="75" height="34" onclick="Static04_onclick"/>
+        <TextArea id="TextAreaB" taborder="11" left="274" top="617" width="94" height="28"/>
+        <Grid id="Grid00" taborder="12" left="150" top="161" width="320" height="129" binddataset="Dataset00" oncellclick="Grid00_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="233"/>
+                <Column size="84"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="UUID"/>
+                <Cell col="1" text="INSTANCE"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:UUID"/>
+                <Cell col="1" text="bind:INSTANCE"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="ButtonWC" taborder="13" text="Write Characteristic" left="29" top="359" width="140" height="32" onclick="ButtonWC_onclick"/>
+        <Button id="ButtonP05" taborder="14" text="5 Second" left="200" top="400" width="76" height="34" onclick="ButtonP05_onclick"/>
+        <Button id="ButtonP10" taborder="15" text="10 Second" left="285" top="400" width="76" height="34" onclick="ButtonP10_onclick"/>
+        <Button id="ButtonB01" taborder="16" text="Beep 1" left="114" top="400" width="76" height="34" onclick="ButtonB01_onclick"/>
+        <Button id="ButtonB00" taborder="17" text="Beep 0" left="27" top="400" width="76" height="34" onclick="ButtonB00_onclick"/>
+        <TextArea id="TextAreaWC" taborder="18" left="179" top="359" width="249" height="32"/>
+        <Button id="Button00" taborder="19" text="Disconnect" left="27" top="211" width="103" height="40" onclick="Button00_onclick"/>
+        <Button id="ButtonStartScan" taborder="20" text="Start Scan" left="27" top="20" width="103" height="40" onclick="ButtonStartScan_onclick"/>
+        <Button id="ButtonStopScan" taborder="21" text="Stop Scan" left="27" top="70" width="103" height="40" onclick="ButtonStopScan_onclick"/>
+        <Grid id="Grid01" taborder="22" left="152" top="21" width="318" height="129" binddataset="Dataset01">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="135"/>
+                <Column size="179"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Name"/>
+                <Cell col="1" text="Address"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Name"/>
+                <Cell col="1" text="bind:Address"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="ButtonEnableNoti" taborder="23" text="Enable Noti" left="26" top="467" width="143" height="33" onclick="ButtonEnableNoti_onclick"/>
+        <Button id="ButtonDisableNoti" taborder="24" text="Disable Noti" left="26" top="511" width="143" height="33" onclick="ButtonDisableNoti_onclick"/>
+        <Grid id="Grid02" taborder="25" left="18" top="658" width="442" height="102" binddataset="Dataset02" oncellclick="Grid00_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="317"/>
+              </Columns>
+              <Rows>
+                <Row size="24"/>
+              </Rows>
+              <Band id="body">
+                <Cell text="bind:Error" textAlign="left" font="8pt &quot;Arial&quot;"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+      <Layout name="mobileMedium_iOS" screenid="mobileM_iOS" width="640" height="1024" mobileorientation="portrait" enable="true">
+        <TextArea id="TAConsole" left="21" top="339" width="254" height="32"/>
+        <Static id="Static00" left="28" top="381" width="75" height="34"/>
+        <TextArea id="TextAreaT" left="99" top="381" width="94" height="28"/>
+        <Static id="Static01" left="28" top="418" width="75" height="34"/>
+        <TextArea id="TextAreaH" left="99" top="419" width="94" height="28"/>
+        <Static id="Static02" left="28" top="455" width="75" height="34"/>
+        <TextArea id="TextAreaD" left="99" top="457" width="94" height="28"/>
+        <Static id="Static03" left="28" top="492" width="75" height="34"/>
+        <TextArea id="TextAreaC" left="99" top="495" width="94" height="28"/>
+        <Static id="Static04" left="28" top="529" width="75" height="34"/>
+        <TextArea id="TextAreaB" left="99" top="532" width="94" height="28"/>
+        <Button id="ButtonWC" left="239" top="400" width="85" height="33"/>
+        <Button id="ButtonP05" left="239" top="488" width="85" height="33"/>
+        <Button id="ButtonP10" left="334" top="488" width="85" height="33"/>
+        <Button id="ButtonB01" left="334" top="445" width="85" height="33"/>
+        <Button id="ButtonB00" left="239" top="444" width="85" height="33"/>
+        <TextArea id="TextAreaWC" left="334" top="400" width="86" height="34"/>
+        <Button id="Button03" left="25" top="160" width="103" height="40"/>
+        <Grid id="Grid00" left="150" top="165" width="370" height="150"/>
+        <Button id="Button00" left="25" top="215" width="103" height="40"/>
+        <Grid id="Grid01" left="152" top="20" width="368" height="119"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="UUID" type="STRING" size="256"/>
+          <Column id="INSTANCE" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <BluetoothLE id="BluetoothLE00"/>
+      <Dataset id="Dataset01">
+        <ColumnInfo>
+          <Column id="Name" type="STRING" size="256"/>
+          <Column id="Address" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="Dataset02">
+        <ColumnInfo>
+          <Column id="Error" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+var AirCubeServiceUUID = "6E400001-B5A3-F393-E0A9-E50E24DCCA9E";
+//var AirCubeServiceUUID = "459162c2-2fda-4546-86a7-e9da7de15c34";
+
+this.FrameForm_Work_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.BluetoothLE00.addEventHandler("onscanresult",this.BluetoothLE00_onscanresult,this);
+	this.BluetoothLE00.addEventHandler("onsuccess",this.BluetoothLE00_onsuccess,this);
+	this.BluetoothLE00.addEventHandler("onerror",this.BluetoothLE00_onerror,this);
+};
+
+this.Button03_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var addressOfSelectedDevice = this.Dataset01.getColumn(this.Dataset01.rowposition, "Address");
+	this.BluetoothLE00.connect(addressOfSelectedDevice);
+};
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.BluetoothLE00.disconnect();
+};
+this.ButtonWC_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	var ServiceUUID = this.Dataset00.getColumn(this.Dataset00.rowposition, "UUID");	
+	this.BluetoothLE00.writeCharacteristic(ServiceUUID, this.TextAreaWC.value);	
+};
+this.ButtonP05_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	var ServiceUUID = this.Dataset00.getColumn(this.Dataset00.rowposition, "UUID");
+	this.BluetoothLE00.writeCharacteristic(ServiceUUID, "C#P5");
+};
+this.ButtonP10_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{		
+	var ServiceUUID = this.Dataset00.getColumn(this.Dataset00.rowposition, "UUID");
+	this.BluetoothLE00.writeCharacteristic( ServiceUUID, "C#P10");
+};
+this.ButtonB01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{		
+	var ServiceUUID = this.Dataset00.getColumn(this.Dataset00.rowposition, "UUID");
+	this.BluetoothLE00.writeCharacteristic( ServiceUUID, "C#B1");
+};
+this.ButtonB00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{			
+	var ServiceUUID = this.Dataset00.getColumn(this.Dataset00.rowposition, "UUID");
+	this.BluetoothLE00.writeCharacteristic(ServiceUUID,  "C#B0");
+};
+this.ButtonStartScan_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	this.Dataset00.deleteAll();
+	this.Dataset01.deleteAll();
+	this.TextAreaB.deleteText();
+	this.TextAreaC.deleteText();
+	this.TextAreaD.deleteText();
+	this.TextAreaH.deleteText();
+	this.TextAreaT.deleteText();
+	this.TextAreaWC.deleteText();	
+	this.TAConsole.deleteText();	
+		
+	this.BluetoothLE00.scanStart(10000);
+		
+
+};
+
+this.ButtonStopScan_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.BluetoothLE00.scanStop();
+};
+
+this.ButtonEnableNoti_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+		var ServiceUUID = this.Dataset00.getColumn(this.Dataset00.rowposition, "UUID");
+		this.BluetoothLE00.enableTXNotification(ServiceUUID);
+};
+
+this.ButtonDisableNoti_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var ServiceUUID = this.Dataset00.getColumn(this.Dataset00.rowposition, "UUID");
+	this.BluetoothLE00.disableTXNotification(ServiceUUID);
+	this.TextAreaB.deleteText();
+	this.TextAreaC.deleteText();
+	this.TextAreaD.deleteText();
+	this.TextAreaH.deleteText();
+	this.TextAreaT.deleteText();
+};
+
+this.BluetoothLE00_onscanresult = function(obj:nexacro.BluetoothLE, e:nexacro.BluetoothLEScanDeviceEventInfo) 
+{	
+	var row = this.Dataset01.addRow();
+	this.Dataset01.setColumn(row, "Name", e.device_name);
+	this.Dataset01.setColumn(row, "Address", e.device_address);
+};
+this.BluetoothLE00_onerror = function(obj:nexacro.BluetoothLE, e:nexacro.BluetoothLEErrorEventInfo) 
+{	
+	var row = this.Dataset02.addRow();
+	this.Dataset02.setColumn(row, "Error", e.errormsg);
+}
+
+
+this.BluetoothLE00_onsuccess = function(obj:nexacro.BluetoothLE, e:nexacro.BluetoothLEEventInfo) 
+{	
+	var strEventMsg = "\n\nBluetoothLE00_onsuccess()";
+	strEventMsg += "\ne.eventid = "+ e.eventid;
+	strEventMsg += "\ne.reason = "+ e.reason;
+	strEventMsg += "\ne.message = "+ e.message;
+	strEventMsg += "\ne.serviceuuid = "+ e.service_uuid;
+	strEventMsg += "\ne.serviceuuid = "+ e.serviceuuid;
+	
+	trace(strEventMsg);
+	
+	if (e.eventid == "oncharacteristicchanged")
+	{
+		trace("BluetoothLE00_onsuccess: [oncharacteristicchanged]");
+		
+		var command = e.message;
+		this.TAConsole.set_value(e.message);
+		
+		if (command.startsWith("S#T"))
+		{	// Temperature & Huminity
+			var huminity_temperature = command.substring(3);
+			var htArray = huminity_temperature.split(',');
+			this.TextAreaH.set_value(htArray[0]);
+			this.TextAreaT.set_value(htArray[1]);
+			this.TextAreaH.set_background("#ff9900"/* #ffffaa */);
+			this.TextAreaT.set_background("#ff9900"/* #ffffaa */);
+			this.setTimer(3, 2000);
+		} 
+		else if (command.startsWith("S#C")) 
+		{	//Co2
+			var co2 = command.substring(3);
+			this.TextAreaC.set_value(co2);
+			this.TextAreaC.set_background("#ff9900"/* #ffffaa */);
+			this.setTimer(1, 2000);
+		}
+		else if (command.startsWith("S#M")) 
+		{	// Dust
+			var dust = command.substring(3);
+			var dArray = dust.split(',');
+			this.TextAreaD.set_value(dArray[0]);
+			this.TextAreaD.set_background("#ff9900"/* #ffffaa */);
+			this.setTimer(2, 2000);
+		}
+		else if (command.startsWith("S#B")) 
+		{	// Battery voltage
+			var batteryVoltage = command.substring(3);
+			this.TextAreaB.set_value(batteryVoltage);
+			this.TextAreaB.set_background("#ff9900"/* #ffffaa */);
+			this.setTimer(0, 2000);
+		}
+	}
+	else if (e.eventid == "onconnected")
+	{
+		trace("BluetoothLE00_onsuccess: [onconnected]");
+		
+		this.Button03.set_text("Connected");
+		// this.Button03.enable = false;
+		var addressOfSelectedDevice = this.Dataset01.getColumn(this.Dataset01.rowposition, "Address");
+		//this.BluetoothLE00.discoverServices(addressOfSelectedDevice);
+		this.BluetoothLE00.discoverService();
+	}
+	else if (e.eventid == "ondisconnected")
+	{
+		trace("BluetoothLE00_onsuccess: [ondisconnected]");
+		
+		this.Button03.set_text("Connect AirCube");
+		this.Button03.enable = true;
+		this.Dataset00.deleteAll();
+		this.Dataset01.deleteAll();
+		this.TextAreaB.deleteText();
+		this.TextAreaC.deleteText();
+		this.TextAreaD.deleteText();
+		this.TextAreaH.deleteText();
+		this.TextAreaT.deleteText();
+		this.TextAreaWC.deleteText();	
+		this.TAConsole.deleteText();
+	}
+	else if (e.eventid == "onservicediscovered")
+	{
+		trace("BluetoothLE00_onsuccess: [onservicediscovered]");
+		
+		var row = this.Dataset00.addRow();
+		this.Dataset00.setColumn(row, "UUID", e.service_uuid);
+	}
+
+};
+
+this.FrameForm_Work_ontimer = function(obj:Form, e:nexacro.TimerEventInfo)
+{
+
+	trace("FrameForm_Work_ontimer timerid : " + e.timerid );
+	
+	if ( e.timerid == 0 ) {	 // b
+		this.TextAreaB.set_background("#ffffaa");
+	} else if ( e.timerid == 1 ) {	 // c	
+		this.TextAreaC.set_background("#ffffaa");
+	} else if ( e.timerid == 2 ) {		// m
+		this.TextAreaD.set_background("#ffffaa");
+	} else if ( e.timerid == 3 ) {	// t
+		this.TextAreaT.set_background("#ffffaa");
+		this.TextAreaH.set_background("#ffffaa");
+	} else if ( e.timerid == 4 ) {	
+	
+	} else if ( e.timerid == 5 ) {	
+	
+	} else if ( e.timerid == 100 ) {	
+	};
+	
+	this.killTimer(e.timerid);	
+}
+
+this.FrameForm_Work_oninit = function(obj:nexacro.Form,e:nexacro.EventInfo)
+{
+	this.addEventHandler("ontimer",this.FrameForm_Work_ontimer,this);
+	
+};
+]]></Script>
+  </Form>
+</FDL>

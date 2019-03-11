@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<MetaInfo version="2.0">
-  <EnumInfo id="enum_ext_usetype" composit="false" description="default|popup">
-    <Enum name="default"/>
-    <Enum name="popup"/>
-  </EnumInfo>
-</MetaInfo>

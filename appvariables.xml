@@ -205,7 +205,7 @@
     </Dataset>
   </Datasets>
   <Variables>
-    <Variable id="appVersion" initval="17.0.0.1400"/>
+    <Variable id="appVersion" initval="17.0.0.1701"/>
     <Variable id="docsURL" initval="http://docs.tobesoft.com/mobile_developer_guide_nexacro_17_ko"/>
   </Variables>
 </AppVariables>

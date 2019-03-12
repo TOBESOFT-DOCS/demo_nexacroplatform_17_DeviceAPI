@@ -89,17 +89,17 @@
     <Os name="Android" url="./_android_/" retry="3" timeout="30" autoupdate="auto" modulepath="C:\Program Files (x86)\nexacro\17\nexacro17lib\" updatetype="update">
       <Version name="common">
         <Resource type="Engine" file="np17demodev.apk" version="17.0.0.1400" targetpath="./"/>
-        <Resource type="Module" file="nexacro17lib.zip" version="17.0.0.1401" targetpath="./" description=""/>
-        <Resource type="File" file="Archive00.xzip" version="17.0.0.1542" targetpath="./" description=""/>
-        <Resource type="Resource" file="Resource.zip" version="17.0.0.1404" targetpath="./" description=""/>
+        <Resource type="Module" file="nexacro17lib.zip" version="17.0.0.1701" targetpath="./" description=""/>
+        <Resource type="File" file="Archive00.xzip" version="17.0.0.1701004" targetpath="./" description=""/>
+        <Resource type="Resource" file="Resource.zip" version="17.0.0.1701" targetpath="./" description=""/>
       </Version>
     </Os>
     <Os name="iOS" url="./_ios_/" retry="3" timeout="30" autoupdate="auto" updatetype="update">
       <Version name="common">
-        <Resource type="Module" file="nexacro17lib.zip" version="17.0.0.1401" targetpath="./" description=""/>
-        <Resource type="Engine" file="Run.zip" version="20190308175636" targetpath="./" description=""/>
-        <Resource type="File" file="Archive00.xzip" version="17.0.0.1494" targetpath="./" description=""/>
-        <Resource type="Resource" file="Resource.zip" version="17.0.0.1404" targetpath="./" description=""/>
+        <Resource type="Module" file="nexacro17lib.zip" version="17.0.0.1701" targetpath="./" description=""/>
+        <Resource type="Engine" file="Run.zip" version="20190312111529" targetpath="./" description=""/>
+        <Resource type="File" file="Archive00.xzip" version="17.0.0.1701" targetpath="./" description=""/>
+        <Resource type="Resource" file="Resource.zip" version="17.0.0.1701" targetpath="./" description=""/>
       </Version>
     </Os>
   </Update>

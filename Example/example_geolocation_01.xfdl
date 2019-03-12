@@ -106,10 +106,11 @@ this.btn_start_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 		return;
 	}
 	
-	this.Geolocation00.watchStart(nAccuracy, nIntervalTime);
+	this.Geolocation00.watchStart(nAccuracy, nIntervalTime)
 	
 	this.btn_start.set_enable(false);
-	this.btn_stop.set_enable(true);
+	this.btn_stop.set_enable(true);	
+
 };
 
 this.btn_stop_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)

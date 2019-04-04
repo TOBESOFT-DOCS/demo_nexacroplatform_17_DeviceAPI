@@ -79,6 +79,7 @@
     <Service prefixid="xcssrc" type="resource" url="./_resource_/_xcss_/" cachelevel="session"/>
     <Service prefixid="Temp" type="form" cachelevel="session" url="./Temp/" version="0" communicationversion="0"/>
     <Service prefixid="File" type="file" cachelevel="session" url="./File/" version="0" communicationversion="0"/>
+    <Service prefixid="Script" type="js" cachelevel="session" url="./Script/" version="0" communicationversion="0"/>
   </Services>
   <Protocols/>
   <Update>
@@ -90,16 +91,16 @@
       <Version name="common">
         <Resource type="Engine" file="np17demodev.apk" version="17.0.0.1400" targetpath="./"/>
         <Resource type="Module" file="nexacro17lib.zip" version="17.0.0.1701" targetpath="./" description=""/>
-        <Resource type="File" file="Archive00.xzip" version="17.0.0.1701004" targetpath="./" description=""/>
+        <Resource type="File" file="Archive00.xzip" version="17.0.0.1701010" targetpath="./" description=""/>
         <Resource type="Resource" file="Resource.zip" version="17.0.0.1701" targetpath="./" description=""/>
       </Version>
     </Os>
     <Os name="iOS" url="./_ios_/" retry="3" timeout="30" autoupdate="auto" updatetype="update">
       <Version name="common">
-        <Resource type="Module" file="nexacro17lib.zip" version="17.0.0.1701" targetpath="./" description=""/>
-        <Resource type="Engine" file="Run.zip" version="20190312111529" targetpath="./" description=""/>
-        <Resource type="File" file="Archive00.xzip" version="17.0.0.1701" targetpath="./" description=""/>
-        <Resource type="Resource" file="Resource.zip" version="17.0.0.1701" targetpath="./" description=""/>
+        <Resource type="Module" file="nexacro17lib.zip" version="17.0.0.1701003" targetpath="./" description=""/>
+        <Resource type="Engine" file="Run.zip" version="20190404185403" targetpath="./" description=""/>
+        <Resource type="File" file="Archive00.xzip" version="17.0.0.1701006" targetpath="./" description=""/>
+        <Resource type="Resource" file="Resource.zip" version="17.0.0.1701002" targetpath="./" description=""/>
       </Version>
     </Os>
   </Update>

@@ -22,7 +22,7 @@ this.example_externalapi_01_onload = function(obj:nexacro.Form,e:nexacro.LoadEve
 	}
 	else if(!strOS.toLowerCase().search(/ios/))
 	{
-		this.edt_appid.set_value("extAPITest://");
+		this.edt_appid.set_value("ExternalAPITest://");
 	}
 	else
 	{
@@ -32,7 +32,8 @@ this.example_externalapi_01_onload = function(obj:nexacro.Form,e:nexacro.LoadEve
 
 this.btn_isaccessible_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
-	this.ExternalAPI00.isAccessible(this.edt_appid.value);
+	strResult = "isAccessible() result: "+ this.ExternalAPI00.isAccessible(this.edt_appid.value) +"\n";
+	this.TextArea00.set_value(this.TextArea00.value + strResult);
 };
 
 this.edt_appid_onkeydown = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
@@ -72,6 +73,7 @@ this.ExternalAPI00_onerror = function(obj:nexacro.ExternalAPI,e:nexacro.External
 	+"\n   > obj : "+ obj
 	+"\n   > e.eventid : "+ e.eventid
 	+"\n   > e.statuscode : "+ e.statuscode
+	+"\n   > e.errortype : "+ e.errortype	
 	+"\n   > e.errormsg : "+ e.errormsg +"\n";
 	
 	this.TextArea00.set_value(strResult);

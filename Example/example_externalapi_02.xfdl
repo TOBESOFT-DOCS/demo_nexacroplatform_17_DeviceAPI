@@ -27,7 +27,7 @@ this.example_externalapi_02_onload = function(obj:nexacro.Form,e:nexacro.LoadEve
 	}
 	else if(!strOS.toLowerCase().search(/ios/))
 	{
-		this.edt_appid.set_value("extAPITest://");
+		this.edt_appid.set_value("ExternalAPITest://");
 	}
 	else
 	{
@@ -57,6 +57,7 @@ this.ExternalAPI00_onerror = function(obj:nexacro.ExternalAPI,e:nexacro.External
 	+"\n   > obj : "+ obj
 	+"\n   > e.eventid : "+ e.eventid
 	+"\n   > e.statuscode : "+ e.statuscode
+	+"\n   > e.errortype : "+ e.errortype
 	+"\n   > e.errormsg : "+ e.errormsg +"\n";
 	
 	this.TextArea00.set_value(strResult);

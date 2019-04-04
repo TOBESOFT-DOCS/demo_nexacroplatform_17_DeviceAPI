@@ -32,8 +32,7 @@ this.example_externalapi_01_onload = function(obj:nexacro.Form,e:nexacro.LoadEve
 
 this.btn_isaccessible_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
-	strResult = "isAccessible() result: "+ this.ExternalAPI00.isAccessible(this.edt_appid.value) +"\n";
-	this.TextArea00.set_value(this.TextArea00.value + strResult);
+	this.ExternalAPI00.isAccessible(this.edt_appid.value);
 };
 
 this.edt_appid_onkeydown = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)

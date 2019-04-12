@@ -4,15 +4,15 @@
     <Layouts>
       <Layout height="768" mobileorientation="portrait" screenid="Screen_M_S_Android,Screen_M_S_iOS" width="480">
         <GroupBox id="GroupBox00" taborder="9" text="execExtAPI Method" left="10" top="20" width="460" height="320" font="normal 18pt/normal &quot;Arial&quot;"/>
-        <TextArea id="TextArea00" taborder="0" position="absolute" left="10" top="360" width="460" height="320" enable="true" readonly="true"/>
+        <TextArea id="TextArea00" taborder="0" position="absolute" left="10" top="360" width="460" height="390" enable="true" readonly="true"/>
         <Static id="stt_recvid" taborder="1" text="Receive ID" left="30" top="70" width="160" height="40" font="normal 14pt/normal &quot;Arial&quot;"/>
-        <Edit id="edt_recvid" taborder="2" left="180" top="70" width="270" height="40" enable="true" font="normal 14pt/normal &quot;Arial&quot;" value="1" text="1"/>
+        <Edit id="edt_recvid" taborder="2" left="180" top="70" width="270" height="40" enable="true" font="normal 14pt/normal &quot;Arial&quot;" text="1"/>
         <Static id="stt_appid" taborder="3" text="Application ID" left="30" top="120" width="160" height="40" font="normal 14pt/normal &quot;Arial&quot;"/>
-        <Edit id="edt_appid" taborder="4" left="180" top="120" width="270" height="40" enable="true" font="normal 14pt/normal &quot;Arial&quot;" value="com.nexacro.extAPITest" text="com.nexacro.extAPITest"/>
+        <Edit id="edt_appid" taborder="4" left="180" top="120" width="270" height="40" enable="true" font="normal 14pt/normal &quot;Arial&quot;" text="com.nexacro.extAPITest"/>
         <Static id="stt_apiname" taborder="5" text="API" left="30" top="170" width="160" height="40" font="normal 14pt/normal &quot;Arial&quot;"/>
-        <Edit id="edt_apiname" taborder="6" left="180" top="170" width="270" height="40" enable="true" font="normal 14pt/normal &quot;Arial&quot;" value="dummyApi" text="dummyApi"/>
+        <Edit id="edt_apiname" taborder="6" left="180" top="170" width="270" height="40" enable="true" font="normal 14pt/normal &quot;Arial&quot;" text="dummyApi"/>
         <Static id="stt_parameter" taborder="7" text="Parameters" left="30" top="220" width="160" height="40" font="normal 14pt/normal &quot;Arial&quot;"/>
-        <Edit id="edt_parameter" taborder="8" left="180" top="220" width="270" height="40" enable="true" font="normal 14pt/normal &quot;Arial&quot;" value="arg1=text arg2=integer" text="arg1=text arg2=integer"/>
+        <Edit id="edt_parameter" taborder="8" left="180" top="220" width="270" height="40" enable="true" font="normal 14pt/normal &quot;Arial&quot;" text="arg1=text arg2=integer"/>
         <Button id="btn_go" taborder="10" text="Go" left="330" top="280" width="120" height="40" font="normal 16pt/normal &quot;Arial&quot;" onclick="btn_go_onclick"/>
       </Layout>
     </Layouts>
@@ -23,7 +23,7 @@ this.example_externalapi_02_onload = function(obj:nexacro.Form,e:nexacro.LoadEve
 	
 	if(!strOS.toLowerCase().search(/android/))
 	{
-		this.edt_appid.set_value("com.nexacro.extAPITest");
+		this.edt_appid.set_value("com.nexacro.ExternalAPITest");
 	}
 	else if(!strOS.toLowerCase().search(/ios/))
 	{
@@ -31,8 +31,12 @@ this.example_externalapi_02_onload = function(obj:nexacro.Form,e:nexacro.LoadEve
 	}
 	else
 	{
-		this.edt_appid.set_value("");
+		this.edt_appid.set_value("ExternalAPITest");
 	}
+	
+	this.edt_recvid.set_value("1");
+	this.edt_apiname.set_value("dummyApi");
+	this.edt_parameter.set_value("arg1=text arg2=integer");
 
 	this.TextArea00.set_value("");
 };

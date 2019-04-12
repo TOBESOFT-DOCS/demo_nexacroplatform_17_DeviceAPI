@@ -91,7 +91,7 @@
       <Version name="common">
         <Resource type="Engine" file="np17demodev.apk" version="17.0.0.1701" targetpath="./"/>
         <Resource type="Module" file="nexacro17lib.zip" version="17.0.0.1701" targetpath="./" description=""/>
-        <Resource type="File" file="Archive00.xzip" version="17.0.0.1701002" targetpath="./" description=""/>
+        <Resource type="File" file="Archive00.xzip" version="17.0.0.1701003" targetpath="./" description=""/>
         <Resource type="Resource" file="Resource.zip" version="17.0.0.1701" targetpath="./" description=""/>
       </Version>
     </Os>
@@ -99,8 +99,8 @@
       <Version name="common">
         <Resource type="Engine" file="https://cacao.tobesoft.co.kr/~nexacro/appbuilder/tops//317/app.plist" version="17.0.0.1701" targetpath="./"/>
         <Resource type="Module" file="nexacro17lib.zip" version="17.0.0.1701" targetpath="./" description=""/>
-        <Resource type="Engine" file="Run.zip" version="20190409180351" targetpath="./" description=""/>
-        <Resource type="File" file="Archive00.xzip" version="17.0.0.1701002" targetpath="./" description=""/>
+        <Resource type="Engine" file="Run.zip" version="20190412153048" targetpath="./" description=""/>
+        <Resource type="File" file="Archive00.xzip" version="17.0.0.1701003" targetpath="./" description=""/>
         <Resource type="Resource" file="Resource.zip" version="17.0.0.1701" targetpath="./" description=""/>
       </Version>
     </Os>
